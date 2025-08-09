@@ -1,0 +1,6 @@
+# ignorer Visual Studio-filer og -mapper
+.vs/
+bin/
+obj/
+*.suo
+*.user

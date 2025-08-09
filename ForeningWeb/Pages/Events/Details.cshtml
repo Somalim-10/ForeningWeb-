@@ -1,0 +1,20 @@
+﻿@page "{id:int}"
+@model ForeningWeb.Pages.Events.DetailsModel
+@{
+    ViewData["Title"] = Model.Item?.Titel ?? "Event";
+}
+<div class="container py-4">
+    @if (Model.Item == null)
+    {
+        <div class="alert alert-danger">Begivenheden blev ikke fundet.</div>
+    }
+    else
+    {
+        <h2>@Model.Item.Titel</h2>
+        <div class="text-muted mb-3">
+            @Model.Item.Dato.ToString("dd.MM.yyyy") @Model.Item.Tidspunkt
+        </div>
+        <p>@Model.Item.Beskrivelse</p>
+        <a class="btn btn-secondary" href="/Events">Tilbage</a>
+    }
+</div>

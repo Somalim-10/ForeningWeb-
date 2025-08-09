@@ -1,0 +1,52 @@
+﻿@page
+@model ForeningWeb.Pages.Admin.Events.CreateModel
+@{
+    ViewData["Title"] = "Admin: Opret begivenhed";
+}
+
+<div class="container py-4">
+    <h2 class="mb-3">Admin: Opret begivenhed</h2>
+
+    <!-- Vis valideringsfejl samlet -->
+    <div class="mb-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </div>
+
+    <form method="post">
+        <!-- Bevar admin-nøglen i POST, så OnPostAsync kan tjekke adgang -->
+        <input type="hidden" name="key" value="@Model.Key" />
+
+        <div class="mb-3">
+            <label asp-for="Item.Titel" class="form-label"></label>
+            <input asp-for="Item.Titel" class="form-control" />
+            <span asp-validation-for="Item.Titel" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Item.Dato" class="form-label"></label>
+            <input asp-for="Item.Dato" type="date" class="form-control" />
+            <span asp-validation-for="Item.Dato" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Item.Tidspunkt" class="form-label"></label>
+            <input asp-for="Item.Tidspunkt" class="form-control" placeholder="fx 18:00" />
+            <span asp-validation-for="Item.Tidspunkt" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Item.Beskrivelse" class="form-label"></label>
+            <textarea asp-for="Item.Beskrivelse" rows="4" class="form-control"></textarea>
+            <span asp-validation-for="Item.Beskrivelse" class="text-danger"></span>
+        </div>
+
+        <div class="d-flex gap-2">
+            <button class="btn btn-primary" type="submit">Opret</button>
+            <a class="btn btn-secondary" href="/Events">Afbryd</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

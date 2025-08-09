@@ -1,0 +1,33 @@
+﻿@page
+@model ForeningWeb.Pages.Events.IndexModel
+@{
+    ViewData["Title"] = "Begivenheder";
+}
+<div class="container py-4">
+    <h2>Begivenheder</h2>
+    @if (!Model.Items.Any())
+    {
+        <div class="alert alert-secondary">Ingen begivenheder endnu.</div>
+    }
+    else
+    {
+        <ul class="list-group">
+            @foreach (var e in Model.Items)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div>
+                        <div class="fw-bold">@e.Titel</div>
+                        <div class="small text-muted">
+                            @e.Dato.ToString("dd.MM.yyyy") @e.Tidspunkt
+                        </div>
+                        @if (!string.IsNullOrWhiteSpace(e.Beskrivelse))
+                        {
+                            <div>@e.Beskrivelse</div>
+                        }
+                    </div>
+                    <a class="btn btn-sm btn-outline-primary" href="/Events/Details/@e.Id">Se mere</a>
+                </li>
+            }
+        </ul>
+    }
+</div>
