@@ -1,0 +1,47 @@
+2025-08-13 00:06:34.236 +02:00 [INF] User profile is available. Using 'C:\Users\somal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-13 00:06:34.468 +02:00 [INF] Now listening on: https://localhost:7239
+2025-08-13 00:06:34.470 +02:00 [INF] Now listening on: http://localhost:5225
+2025-08-13 00:06:34.636 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-13 00:06:34.638 +02:00 [INF] Hosting environment: Development
+2025-08-13 00:06:34.639 +02:00 [INF] Content root path: C:\Users\somal\OneDrive\Desktop\Mohamed's Projekter\ForeningWeb\ForeningWeb
+2025-08-13 00:07:54.008 +02:00 [INF] User profile is available. Using 'C:\Users\somal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-13 00:07:54.227 +02:00 [INF] Now listening on: https://localhost:7239
+2025-08-13 00:07:54.229 +02:00 [INF] Now listening on: http://localhost:5225
+2025-08-13 00:07:54.264 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-13 00:07:54.267 +02:00 [INF] Hosting environment: Development
+2025-08-13 00:07:54.269 +02:00 [INF] Content root path: C:\Users\somal\OneDrive\Desktop\Mohamed's Projekter\ForeningWeb\ForeningWeb
+2025-08-13 00:07:54.933 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ - null null
+2025-08-13 00:07:55.109 +02:00 [INF] Executing endpoint '/Index'
+2025-08-13 00:07:55.165 +02:00 [INF] Route matched with {page = "/Index"}. Executing page /Index
+2025-08-13 00:07:55.184 +02:00 [INF] Executing handler method ForeningWeb.Pages.IndexModel.OnGet - ModelState is "Valid"
+2025-08-13 00:07:55.189 +02:00 [INF] Executed handler method OnGet, returned result .
+2025-08-13 00:07:55.195 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-13 00:07:55.199 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 00:07:55.283 +02:00 [INF] Executed page /Index in 113.1232ms
+2025-08-13 00:07:55.290 +02:00 [INF] Executed endpoint '/Index'
+2025-08-13 00:07:55.294 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 00:07:55.294 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-08-13 00:07:55.368 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 444.3617ms
+2025-08-13 00:07:55.294 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - null null
+2025-08-13 00:07:55.294 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ForeningWeb.styles.css?v=Ea0xW-sqy4ukyFcKx-tgSZ-ZW7uiljb7xEKxLChnHXU - null null
+2025-08-13 00:07:55.294 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-08-13 00:07:55.306 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2025-08-13 00:07:55.314 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/lib/jquery/dist/jquery.min.js - null null
+2025-08-13 00:07:55.356 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 00:07:55.382 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 87.5983ms
+2025-08-13 00:07:55.384 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-08-13 00:07:55.389 +02:00 [INF] The file /css/site.css was not modified
+2025-08-13 00:07:55.393 +02:00 [INF] The file /ForeningWeb.styles.css was not modified
+2025-08-13 00:07:55.395 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-08-13 00:07:55.399 +02:00 [INF] The file /js/site.js was not modified
+2025-08-13 00:07:55.403 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-08-13 00:07:55.422 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 127.8004ms
+2025-08-13 00:07:55.424 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/css/site.css?v=pAGv4ietcJNk_EwsQZ5BN9-K4MuNYS2a9wl4Jw-q9D0 - 304 null text/css 130.0556ms
+2025-08-13 00:07:55.428 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ForeningWeb.styles.css?v=Ea0xW-sqy4ukyFcKx-tgSZ-ZW7uiljb7xEKxLChnHXU - 304 null text/css 133.9642ms
+2025-08-13 00:07:55.431 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 136.6988ms
+2025-08-13 00:07:55.433 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 304 null text/javascript 127.2368ms
+2025-08-13 00:07:55.435 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/lib/jquery/dist/jquery.min.js - 304 null text/javascript 121.1788ms
+2025-08-13 00:07:55.464 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 107.9888ms
+2025-08-13 00:07:55.485 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/favicon.ico - null null
+2025-08-13 00:07:55.492 +02:00 [INF] The file /favicon.ico was not modified
+2025-08-13 00:07:55.495 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/favicon.ico - 304 null image/x-icon 9.603ms
