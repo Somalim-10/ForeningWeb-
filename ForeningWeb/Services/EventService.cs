@@ -32,6 +32,12 @@ namespace ForeningWeb.Services
             await _db.SaveChangesAsync();
         }
 
+        public Task<List<Event>> GetAllAsync() =>
+    _db.Events
+        .OrderByDescending(e => e.Dato)
+        .ToListAsync();
+
+
         public async Task DeleteAsync(int id)
         {
             var e = await _db.Events.FindAsync(id);

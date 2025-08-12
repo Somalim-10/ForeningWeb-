@@ -14,7 +14,6 @@
 
     <form method="post">
         <!-- Bevar admin-nøglen i POST, så OnPostAsync kan tjekke adgang -->
-        <input type="hidden" name="key" value="@Model.Key" />
 
         <div class="mb-3">
             <label asp-for="Item.Titel" class="form-label"></label>

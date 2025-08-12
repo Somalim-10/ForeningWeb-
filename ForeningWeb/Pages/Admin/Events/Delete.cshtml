@@ -7,7 +7,6 @@
     <h2 class="mb-3 text-danger">Slet begivenhed</h2>
     <p>Er du sikker på, at du vil slette denne begivenhed (ID: <strong>@Model.Id</strong>)?</p>
     <form method="post">
-        <input type="hidden" name="key" value="@Model.Key" />
         <button class="btn btn-danger" type="submit">Ja, slet</button>
         <a class="btn btn-secondary" href="/Events">Nej, tilbage</a>
     </form>
