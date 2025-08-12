@@ -9,7 +9,6 @@
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
     <form method="post">
-        <input type="hidden" name="key" value="@Model.Key" />
         <input type="hidden" asp-for="Item.Id" />
 
         <div class="mb-3">
@@ -38,7 +37,6 @@
 
         <div class="d-flex gap-2">
             <button class="btn btn-primary" type="submit">Gem</button>
-            <a class="btn btn-outline-danger" href="/Admin/Events/Delete/@Model.Item.Id?key=@Model.Key">Slet…</a>
             <a class="btn btn-secondary" href="/Events/Details/@Model.Item.Id">Tilbage</a>
         </div>
     </form>

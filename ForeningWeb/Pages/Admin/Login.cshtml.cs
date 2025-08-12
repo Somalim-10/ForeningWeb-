@@ -3,12 +3,14 @@ using System.Security.Claims;
 using ForeningWeb.Security;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Options;
 
 namespace ForeningWeb.Pages.Admin
 {
+    [AllowAnonymous]
     public class LoginModel : PageModel
     {
         private readonly IOptions<AdminOptions> _admin;
@@ -59,7 +61,8 @@ namespace ForeningWeb.Pages.Admin
             if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                 return Redirect(returnUrl);
 
-            return Redirect("/Events"); // evt. /Admin/Events
+            // Send tilbage til admin-eventlisten som standard
+            return RedirectToPage("/Admin/Events/Index");
         }
     }
 }
