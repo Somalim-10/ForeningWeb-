@@ -1,0 +1,15 @@
+@page "{id:int}"
+@model ForeningWeb.Pages.Kontakt.DeleteModel
+
+<h1>Slet Kontakt</h1>
+
+<p>Er du sikker på, at du vil slette denne kontakt?</p>
+
+<div>
+    <strong>Navn:</strong> @Model.Item?.Navn
+</div>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Slet</button>
+    <a asp-page="Index" class="btn btn-secondary">Annuller</a>
+</form>

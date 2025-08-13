@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // ---------- Logging (Serilog) ----------
 Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration) // læs fra appsettings.json
+    .ReadFrom.Configuration(builder.Configuration) // ls fra appsettings.json
     .Enrich.FromLogContext()
     .CreateLogger();
 builder.Host.UseSerilog();
@@ -23,8 +23,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Custom services
 builder.Services.AddScoped<EventService>();
+builder.Services.AddScoped<DonationService>();
+builder.Services.AddScoped<KontaktService>();
+builder.Services.AddScoped<OmService>();
 
-// Admin options (nøgle fra appsettings)
+// Admin options (ngle fra appsettings)
 builder.Services.Configure<AdminOptions>(
     builder.Configuration.GetSection("Admin"));
 
@@ -57,6 +60,8 @@ builder.Services.AddAuthorization(options =>
 
 // ---------- App pipeline ----------
 var app = builder.Build();
+
+SeedData.Initialize(app.Services);
 
 if (!app.Environment.IsDevelopment())
 {

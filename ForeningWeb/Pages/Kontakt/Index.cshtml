@@ -1,0 +1,32 @@
+@page
+@model ForeningWeb.Pages.Kontakt.IndexModel
+
+<h1>Kontakter</h1>
+
+<p><a asp-page="Create">Opret ny</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Navn</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Items)
+{
+        <tr>
+            <td>@item.Navn</td>
+            <td>@item.Email</td>
+            <td>@item.Telefon</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@item.Id">Rediger</a> |
+                <a asp-page="Details" asp-route-id="@item.Id">Detaljer</a> |
+                <a asp-page="Delete" asp-route-id="@item.Id">Slet</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
