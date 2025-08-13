@@ -1,0 +1,15 @@
+@page "{id:int}"
+@model ForeningWeb.Pages.About.DetailsModel
+
+<h1>Om</h1>
+
+<div>
+    <strong>Indhold:</strong> @Model.Item?.Indhold
+</div>
+<div>
+    <strong>Billede:</strong> @Model.Item?.BilledePath
+</div>
+<div>
+    <a asp-page="Edit" asp-route-id="@Model.Item?.Id">Rediger</a> |
+    <a asp-page="Index">Tilbage</a>
+</div>

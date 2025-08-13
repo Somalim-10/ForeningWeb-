@@ -1,0 +1,18 @@
+@page
+@model ForeningWeb.Pages.About.CreateModel
+
+<h1>Opret Om</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="Item.Indhold"></label>
+        <input asp-for="Item.Indhold" class="form-control" />
+        <span asp-validation-for="Item.Indhold" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Item.BilledePath"></label>
+        <input asp-for="Item.BilledePath" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Gem</button>
+    <a asp-page="Index" class="btn btn-secondary">Tilbage</a>
+</form>

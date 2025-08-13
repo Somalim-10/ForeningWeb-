@@ -17,6 +17,7 @@ builder.Host.UseSerilog();
 // ---------- Services ----------
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
+builder.Services.AddScoped<ForeningWeb.Services.DonationService>();
 
 // Database
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

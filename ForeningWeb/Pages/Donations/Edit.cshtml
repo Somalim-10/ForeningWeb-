@@ -1,0 +1,22 @@
+@page "{id:int}"
+@model ForeningWeb.Pages.Donations.EditModel
+
+<h1>Rediger Donation</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="Item.MobilePayNummer"></label>
+        <input asp-for="Item.MobilePayNummer" class="form-control" />
+        <span asp-validation-for="Item.MobilePayNummer" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Item.Besked"></label>
+        <input asp-for="Item.Besked" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Item.QrKodePath"></label>
+        <input asp-for="Item.QrKodePath" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Gem</button>
+    <a asp-page="Index" class="btn btn-secondary">Tilbage</a>
+</form>

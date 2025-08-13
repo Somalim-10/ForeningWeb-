@@ -23,9 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Donation\" />
-    <Folder Include="Pages\Kontakt\" />
-    <Folder Include="Pages\Om\" />
+    <Folder Include="Pages\Donations\" />
+    <Folder Include="Pages\Contacts\" />
+    <Folder Include="Pages\About\" />
   </ItemGroup>
 
 </Project>

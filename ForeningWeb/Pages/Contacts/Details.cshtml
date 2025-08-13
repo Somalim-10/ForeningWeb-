@@ -1,0 +1,21 @@
+@page "{id:int}"
+@model ForeningWeb.Pages.Contacts.DetailsModel
+
+<h1>Kontakt</h1>
+
+<div>
+    <strong>Navn:</strong> @Model.Item?.Navn
+</div>
+<div>
+    <strong>Email:</strong> @Model.Item?.Email
+</div>
+<div>
+    <strong>Telefon:</strong> @Model.Item?.Telefon
+</div>
+<div>
+    <strong>Adresse:</strong> @Model.Item?.Adresse
+</div>
+<div>
+    <a asp-page="Edit" asp-route-id="@Model.Item?.Id">Rediger</a> |
+    <a asp-page="Index">Tilbage</a>
+</div>

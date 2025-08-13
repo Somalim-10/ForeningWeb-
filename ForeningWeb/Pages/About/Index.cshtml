@@ -1,0 +1,28 @@
+@page
+@model ForeningWeb.Pages.About.IndexModel
+
+<h1>Om</h1>
+
+<p><a asp-page="Create">Opret ny</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Indhold</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Items)
+{
+        <tr>
+            <td>@item.Indhold</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@item.Id">Rediger</a> |
+                <a asp-page="Details" asp-route-id="@item.Id">Detaljer</a> |
+                <a asp-page="Delete" asp-route-id="@item.Id">Slet</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
