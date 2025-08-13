@@ -16,6 +16,9 @@
     <strong>Adresse:</strong> @Model.Item?.Adresse
 </div>
 <div>
-    <a asp-page="Edit" asp-route-id="@Model.Item?.Id">Rediger</a> |
+    @if (User.HasClaim("role", "admin"))
+    {
+        <a asp-page="Edit" asp-route-id="@Model.Item?.Id">Rediger</a> |
+    }
     <a asp-page="Index">Tilbage</a>
 </div>
