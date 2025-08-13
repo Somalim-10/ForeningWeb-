@@ -15,6 +15,7 @@ Log.Logger = new LoggerConfiguration()
 builder.Host.UseSerilog();
 
 // ---------- Services ----------
+builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 
 // Database
