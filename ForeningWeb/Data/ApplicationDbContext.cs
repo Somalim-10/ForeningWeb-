@@ -11,7 +11,6 @@ namespace ForeningWeb.Data
         }
 
         public DbSet<Event> Events { get; set; }
-        public DbSet<Forside> Forsider { get; set; }
         public DbSet<Om> Om { get; set; }
         public DbSet<Kontakt> Kontakter { get; set; }
     }
