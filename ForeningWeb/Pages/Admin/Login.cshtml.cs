@@ -62,7 +62,7 @@ namespace ForeningWeb.Pages.Admin
                 return Redirect(returnUrl);
 
             // Send tilbage til admin-eventlisten som standard
-            return RedirectToPage("/Admin/Events/Index");
+            return RedirectToPage("/Index");
         }
     }
 }

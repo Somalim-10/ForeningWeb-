@@ -26,12 +26,12 @@
             <td>
                 @if (User.HasClaim("role", "admin"))
                 {
-                    <a asp-page="Edit" asp-route-id="@item.Id">Rediger</a> |
+                    <a asp-page="Edit" asp-route-id="@item.Id">Rediger</a> 
                 }
                 <a asp-page="Details" asp-route-id="@item.Id">Detaljer</a>
                 @if (User.HasClaim("role", "admin"))
                 {
-                    | <a asp-page="Delete" asp-route-id="@item.Id">Slet</a>
+                     <a asp-page="Delete" asp-route-id="@item.Id">Slet</a>
                 }
             </td>
         </tr>
