@@ -1251,3 +1251,22 @@ SELECT "MigrationId", "ProductVersion"
 FROM "__EFMigrationsHistory"
 ORDER BY "MigrationId";
 2025-08-13 02:10:58.689 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-08-13 17:56:17.370 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-08-13 17:56:17.463 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-08-13 17:56:17.509 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-08-13 17:56:17.548 +02:00 [INF] Applying migration '20250813155558_AddNyFunktion'.
+2025-08-13 17:56:17.607 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Donationer" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Donationer" PRIMARY KEY AUTOINCREMENT,
+    "MobilePayNummer" TEXT NOT NULL,
+    "Besked" TEXT NULL,
+    "QrKodePath" TEXT NULL
+);
+2025-08-13 17:56:17.609 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250813155558_AddNyFunktion', '8.0.7');
