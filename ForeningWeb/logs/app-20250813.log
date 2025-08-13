@@ -1802,3 +1802,264 @@ FROM "Donationer" AS "d"
 2025-08-13 22:53:21.487 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 106.4253ms
 2025-08-13 22:53:21.501 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 17.4946ms
 2025-08-13 22:53:21.634 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 150.3273ms
+2025-08-13 23:01:15.312 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Events - null null
+2025-08-13 23:01:15.396 +02:00 [INF] Executing endpoint '/Events/Index'
+2025-08-13 23:01:15.398 +02:00 [INF] Route matched with {page = "/Events/Index"}. Executing page /Events/Index
+2025-08-13 23:01:15.403 +02:00 [INF] Executing handler method ForeningWeb.Pages.Events.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-13 23:01:15.420 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Beskrivelse", "e"."Dato", "e"."Tidspunkt", "e"."Titel"
+FROM "Events" AS "e"
+ORDER BY "e"."Dato" DESC
+LIMIT @__p_0
+2025-08-13 23:01:15.443 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-13 23:01:15.447 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-13 23:01:15.450 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:15.458 +02:00 [INF] Executed page /Events/Index in 56.1681ms
+2025-08-13 23:01:15.480 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:15.480 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:15.495 +02:00 [INF] Executed endpoint '/Events/Index'
+2025-08-13 23:01:15.503 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 22.4719ms
+2025-08-13 23:01:15.622 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Events - 200 null text/html; charset=utf-8 310.4609ms
+2025-08-13 23:01:15.751 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 271.4133ms
+2025-08-13 23:01:17.976 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Events - null null
+2025-08-13 23:01:18.025 +02:00 [INF] Executing endpoint '/Events/Index'
+2025-08-13 23:01:18.027 +02:00 [INF] Route matched with {page = "/Events/Index"}. Executing page /Events/Index
+2025-08-13 23:01:18.029 +02:00 [INF] Executing handler method ForeningWeb.Pages.Events.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-13 23:01:18.039 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Beskrivelse", "e"."Dato", "e"."Tidspunkt", "e"."Titel"
+FROM "Events" AS "e"
+ORDER BY "e"."Dato" DESC
+LIMIT @__p_0
+2025-08-13 23:01:18.043 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-13 23:01:18.044 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-13 23:01:18.046 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:18.055 +02:00 [INF] Executed page /Events/Index in 27.5474ms
+2025-08-13 23:01:18.058 +02:00 [INF] Executed endpoint '/Events/Index'
+2025-08-13 23:01:18.093 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:18.093 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:18.095 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Events - 200 null text/html; charset=utf-8 118.6414ms
+2025-08-13 23:01:18.104 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 11.8665ms
+2025-08-13 23:01:18.225 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 132.7352ms
+2025-08-13 23:01:19.138 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/About - null null
+2025-08-13 23:01:19.175 +02:00 [INF] Executing endpoint '/About/Index'
+2025-08-13 23:01:19.178 +02:00 [INF] Route matched with {page = "/About/Index"}. Executing page /About/Index
+2025-08-13 23:01:19.179 +02:00 [INF] Executing handler method ForeningWeb.Pages.About.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-13 23:01:19.180 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."BilledePath", "o"."Indhold"
+FROM "Om" AS "o"
+2025-08-13 23:01:19.185 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-13 23:01:19.186 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-13 23:01:19.188 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:19.189 +02:00 [INF] Executed page /About/Index in 10.7587ms
+2025-08-13 23:01:19.212 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:19.212 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:19.214 +02:00 [INF] Executed endpoint '/About/Index'
+2025-08-13 23:01:19.311 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/About - 200 null text/html; charset=utf-8 173.4985ms
+2025-08-13 23:01:19.299 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 86.9898ms
+2025-08-13 23:01:19.376 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 163.9491ms
+2025-08-13 23:01:21.836 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/About/Edit/1 - null null
+2025-08-13 23:01:21.889 +02:00 [INF] Executing endpoint '/About/Edit'
+2025-08-13 23:01:21.900 +02:00 [INF] Route matched with {page = "/About/Edit"}. Executing page /About/Edit
+2025-08-13 23:01:21.907 +02:00 [INF] Executing handler method ForeningWeb.Pages.About.EditModel.OnGetAsync - ModelState is "Valid"
+2025-08-13 23:01:21.997 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."BilledePath", "o"."Indhold"
+FROM "Om" AS "o"
+WHERE "o"."Id" = @__p_0
+LIMIT 1
+2025-08-13 23:01:22.001 +02:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:22.037 +02:00 [INF] Executed page /About/Edit in 133.3455ms
+2025-08-13 23:01:22.041 +02:00 [INF] Executed endpoint '/About/Edit'
+2025-08-13 23:01:22.049 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:22.049 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:22.065 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/About/Edit/1 - 200 null text/html; charset=utf-8 228.4517ms
+2025-08-13 23:01:22.164 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 114.9619ms
+2025-08-13 23:01:22.187 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 137.9578ms
+2025-08-13 23:01:26.765 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7239/About/Edit/1 - application/x-www-form-urlencoded 294
+2025-08-13 23:01:26.823 +02:00 [INF] Executing endpoint '/About/Edit'
+2025-08-13 23:01:26.828 +02:00 [INF] Route matched with {page = "/About/Edit"}. Executing page /About/Edit
+2025-08-13 23:01:26.844 +02:00 [INF] Executing handler method ForeningWeb.Pages.About.EditModel.OnPostAsync - ModelState is "Valid"
+2025-08-13 23:01:27.023 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?' (Size = 32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Om" ("BilledePath", "Indhold")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-08-13 23:01:27.091 +02:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult.
+2025-08-13 23:01:27.095 +02:00 [INF] Executing RedirectToPageResult, redirecting to Details.
+2025-08-13 23:01:27.098 +02:00 [INF] Executed page /About/Edit in 267.4424ms
+2025-08-13 23:01:27.102 +02:00 [INF] Executed endpoint '/About/Edit'
+2025-08-13 23:01:27.105 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7239/About/Edit/1 - 302 0 null 339.5369ms
+2025-08-13 23:01:27.109 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/About/Details/2 - null null
+2025-08-13 23:01:27.153 +02:00 [INF] Executing endpoint '/About/Details'
+2025-08-13 23:01:27.160 +02:00 [INF] Route matched with {page = "/About/Details"}. Executing page /About/Details
+2025-08-13 23:01:27.166 +02:00 [INF] Executing handler method ForeningWeb.Pages.About.DetailsModel.OnGetAsync - ModelState is "Valid"
+2025-08-13 23:01:27.174 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."BilledePath", "o"."Indhold"
+FROM "Om" AS "o"
+WHERE "o"."Id" = @__p_0
+LIMIT 1
+2025-08-13 23:01:27.181 +02:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:27.197 +02:00 [INF] Executed page /About/Details in 32.8303ms
+2025-08-13 23:01:27.226 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:27.227 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:27.269 +02:00 [INF] Executed endpoint '/About/Details'
+2025-08-13 23:01:27.274 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 48.6021ms
+2025-08-13 23:01:27.322 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/About/Details/2 - 200 null text/html; charset=utf-8 212.9345ms
+2025-08-13 23:01:27.334 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 107.0758ms
+2025-08-13 23:01:29.102 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Donations - null null
+2025-08-13 23:01:29.145 +02:00 [INF] Executing endpoint '/Donations/Index'
+2025-08-13 23:01:29.147 +02:00 [INF] Route matched with {page = "/Donations/Index"}. Executing page /Donations/Index
+2025-08-13 23:01:29.149 +02:00 [INF] Executing handler method ForeningWeb.Pages.Donations.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-13 23:01:29.156 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."Besked", "d"."MobilePayNummer", "d"."QrKodePath"
+FROM "Donationer" AS "d"
+2025-08-13 23:01:29.184 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-13 23:01:29.188 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-13 23:01:29.190 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:29.194 +02:00 [INF] Executed page /Donations/Index in 45.6895ms
+2025-08-13 23:01:29.196 +02:00 [INF] Executed endpoint '/Donations/Index'
+2025-08-13 23:01:29.197 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Donations - 200 null text/html; charset=utf-8 95.0822ms
+2025-08-13 23:01:29.302 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:29.322 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 19.427ms
+2025-08-13 23:01:29.303 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:29.346 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.4288ms
+2025-08-13 23:01:39.986 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Admin/Login - null null
+2025-08-13 23:01:40.048 +02:00 [INF] Executing endpoint '/Admin/Login'
+2025-08-13 23:01:40.052 +02:00 [INF] Route matched with {page = "/Admin/Login"}. Executing page /Admin/Login
+2025-08-13 23:01:40.057 +02:00 [INF] Executing handler method ForeningWeb.Pages.Admin.LoginModel.OnGet - ModelState is "Valid"
+2025-08-13 23:01:40.058 +02:00 [INF] Executed handler method OnGet, returned result .
+2025-08-13 23:01:40.062 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-13 23:01:40.064 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:40.072 +02:00 [INF] Executed page /Admin/Login in 15.8818ms
+2025-08-13 23:01:40.074 +02:00 [INF] Executed endpoint '/Admin/Login'
+2025-08-13 23:01:40.095 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:40.095 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:40.117 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Admin/Login - 200 null text/html; charset=utf-8 131.2315ms
+2025-08-13 23:01:40.122 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 27.4152ms
+2025-08-13 23:01:40.290 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 195.6596ms
+2025-08-13 23:01:41.443 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ - null null
+2025-08-13 23:01:41.487 +02:00 [INF] Executing endpoint '/Index'
+2025-08-13 23:01:41.490 +02:00 [INF] Route matched with {page = "/Index"}. Executing page /Index
+2025-08-13 23:01:41.491 +02:00 [INF] Executing handler method ForeningWeb.Pages.IndexModel.OnGet - ModelState is "Valid"
+2025-08-13 23:01:41.492 +02:00 [INF] Executed handler method OnGet, returned result .
+2025-08-13 23:01:41.493 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-13 23:01:41.494 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:41.497 +02:00 [INF] Executed page /Index in 5.9874ms
+2025-08-13 23:01:41.500 +02:00 [INF] Executed endpoint '/Index'
+2025-08-13 23:01:41.521 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 77.2747ms
+2025-08-13 23:01:41.512 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:41.512 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:41.671 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 158.811ms
+2025-08-13 23:01:41.674 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 161.7589ms
+2025-08-13 23:01:42.608 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ - null null
+2025-08-13 23:01:42.642 +02:00 [INF] Executing endpoint '/Index'
+2025-08-13 23:01:42.644 +02:00 [INF] Route matched with {page = "/Index"}. Executing page /Index
+2025-08-13 23:01:42.645 +02:00 [INF] Executing handler method ForeningWeb.Pages.IndexModel.OnGet - ModelState is "Valid"
+2025-08-13 23:01:42.646 +02:00 [INF] Executed handler method OnGet, returned result .
+2025-08-13 23:01:42.647 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-13 23:01:42.648 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:42.652 +02:00 [INF] Executed page /Index in 7.3123ms
+2025-08-13 23:01:42.653 +02:00 [INF] Executed endpoint '/Index'
+2025-08-13 23:01:42.654 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 45.9048ms
+2025-08-13 23:01:42.673 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:42.673 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:42.680 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 6.6507ms
+2025-08-13 23:01:42.708 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 35.2786ms
+2025-08-13 23:01:44.254 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Events - null null
+2025-08-13 23:01:44.312 +02:00 [INF] Executing endpoint '/Events/Index'
+2025-08-13 23:01:44.314 +02:00 [INF] Route matched with {page = "/Events/Index"}. Executing page /Events/Index
+2025-08-13 23:01:44.317 +02:00 [INF] Executing handler method ForeningWeb.Pages.Events.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-13 23:01:44.320 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Beskrivelse", "e"."Dato", "e"."Tidspunkt", "e"."Titel"
+FROM "Events" AS "e"
+ORDER BY "e"."Dato" DESC
+LIMIT @__p_0
+2025-08-13 23:01:44.325 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-13 23:01:44.327 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-13 23:01:44.329 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:44.336 +02:00 [INF] Executed page /Events/Index in 18.9315ms
+2025-08-13 23:01:44.337 +02:00 [INF] Executed endpoint '/Events/Index'
+2025-08-13 23:01:44.339 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Events - 200 null text/html; charset=utf-8 84.3434ms
+2025-08-13 23:01:44.346 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:44.352 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 6.4383ms
+2025-08-13 23:01:44.346 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:44.378 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.2327ms
+2025-08-13 23:01:45.956 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/About - null null
+2025-08-13 23:01:46.002 +02:00 [INF] Executing endpoint '/About/Index'
+2025-08-13 23:01:46.005 +02:00 [INF] Route matched with {page = "/About/Index"}. Executing page /About/Index
+2025-08-13 23:01:46.007 +02:00 [INF] Executing handler method ForeningWeb.Pages.About.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-13 23:01:46.008 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."BilledePath", "o"."Indhold"
+FROM "Om" AS "o"
+2025-08-13 23:01:46.011 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-13 23:01:46.012 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-13 23:01:46.013 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:46.023 +02:00 [INF] Executed page /About/Index in 16.948ms
+2025-08-13 23:01:46.085 +02:00 [INF] Executed endpoint '/About/Index'
+2025-08-13 23:01:46.056 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:46.056 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:46.089 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/About - 200 null text/html; charset=utf-8 131.2782ms
+2025-08-13 23:01:46.144 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 88.1364ms
+2025-08-13 23:01:46.247 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 191.4181ms
+2025-08-13 23:01:51.224 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/About/Edit/2 - null null
+2025-08-13 23:01:51.291 +02:00 [INF] Executing endpoint '/About/Edit'
+2025-08-13 23:01:51.309 +02:00 [INF] Route matched with {page = "/About/Edit"}. Executing page /About/Edit
+2025-08-13 23:01:51.318 +02:00 [INF] Executing handler method ForeningWeb.Pages.About.EditModel.OnGetAsync - ModelState is "Valid"
+2025-08-13 23:01:51.324 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."BilledePath", "o"."Indhold"
+FROM "Om" AS "o"
+WHERE "o"."Id" = @__p_0
+LIMIT 1
+2025-08-13 23:01:51.329 +02:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:51.338 +02:00 [INF] Executed page /About/Edit in 24.4699ms
+2025-08-13 23:01:51.340 +02:00 [INF] Executed endpoint '/About/Edit'
+2025-08-13 23:01:51.341 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/About/Edit/2 - 200 null text/html; charset=utf-8 116.4667ms
+2025-08-13 23:01:51.362 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:51.362 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:51.372 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 9.804ms
+2025-08-13 23:01:51.443 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 80.5767ms
+2025-08-13 23:01:55.175 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7239/About/Edit/2 - application/x-www-form-urlencoded 295
+2025-08-13 23:01:55.225 +02:00 [INF] Executing endpoint '/About/Edit'
+2025-08-13 23:01:55.227 +02:00 [INF] Route matched with {page = "/About/Edit"}. Executing page /About/Edit
+2025-08-13 23:01:55.233 +02:00 [INF] Executing handler method ForeningWeb.Pages.About.EditModel.OnPostAsync - ModelState is "Valid"
+2025-08-13 23:01:55.240 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (Size = 33)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Om" ("BilledePath", "Indhold")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-08-13 23:01:55.249 +02:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult.
+2025-08-13 23:01:55.252 +02:00 [INF] Executing RedirectToPageResult, redirecting to Details.
+2025-08-13 23:01:55.255 +02:00 [INF] Executed page /About/Edit in 25.3075ms
+2025-08-13 23:01:55.260 +02:00 [INF] Executed endpoint '/About/Edit'
+2025-08-13 23:01:55.263 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7239/About/Edit/2 - 302 0 null 88.2774ms
+2025-08-13 23:01:55.271 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/About/Details/3 - null null
+2025-08-13 23:01:55.334 +02:00 [INF] Executing endpoint '/About/Details'
+2025-08-13 23:01:55.336 +02:00 [INF] Route matched with {page = "/About/Details"}. Executing page /About/Details
+2025-08-13 23:01:55.338 +02:00 [INF] Executing handler method ForeningWeb.Pages.About.DetailsModel.OnGetAsync - ModelState is "Valid"
+2025-08-13 23:01:55.343 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."BilledePath", "o"."Indhold"
+FROM "Om" AS "o"
+WHERE "o"."Id" = @__p_0
+LIMIT 1
+2025-08-13 23:01:55.349 +02:00 [INF] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:55.353 +02:00 [INF] Executed page /About/Details in 15.7413ms
+2025-08-13 23:01:55.355 +02:00 [INF] Executed endpoint '/About/Details'
+2025-08-13 23:01:55.357 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/About/Details/3 - 200 null text/html; charset=utf-8 86.245ms
+2025-08-13 23:01:55.364 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:55.364 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:55.380 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 16.1497ms
+2025-08-13 23:01:55.450 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 86.7062ms
+2025-08-13 23:01:57.582 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/About - null null
+2025-08-13 23:01:57.655 +02:00 [INF] Executing endpoint '/About/Index'
+2025-08-13 23:01:57.657 +02:00 [INF] Route matched with {page = "/About/Index"}. Executing page /About/Index
+2025-08-13 23:01:57.660 +02:00 [INF] Executing handler method ForeningWeb.Pages.About.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-13 23:01:57.666 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."BilledePath", "o"."Indhold"
+FROM "Om" AS "o"
+2025-08-13 23:01:57.678 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-13 23:01:57.683 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-13 23:01:57.686 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-13 23:01:57.693 +02:00 [INF] Executed page /About/Index in 33.2745ms
+2025-08-13 23:01:57.704 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-13 23:01:57.704 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-13 23:01:57.706 +02:00 [INF] Executed endpoint '/About/Index'
+2025-08-13 23:01:57.741 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/About - 200 null text/html; charset=utf-8 158.6071ms
+2025-08-13 23:01:57.722 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 17.8647ms
+2025-08-13 23:01:57.864 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 159.5196ms
