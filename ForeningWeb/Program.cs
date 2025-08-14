@@ -37,10 +37,19 @@ builder.Services.Configure<AdminOptions>(
 builder.Services.AddHealthChecks()
     .AddDbContextCheck<ApplicationDbContext>("db");
 
-// Razor Pages + beskyt hele /Admin-mappen
+// Razor Pages + beskyt hele /Admin-mappen samt specefikke mapper 
 builder.Services.AddRazorPages(options =>
 {
     options.Conventions.AuthorizeFolder("/Admin", "AdminOnly");
+    options.Conventions.AuthorizePage("/Contacts/Create", "AdminOnly");
+    options.Conventions.AuthorizePage("/Contacts/Edit", "AdminOnly");
+    options.Conventions.AuthorizePage("/Contacts/Delete", "AdminOnly");
+    options.Conventions.AuthorizePage("/Donations/Create", "AdminOnly");
+    options.Conventions.AuthorizePage("/Donations/Edit", "AdminOnly");
+    options.Conventions.AuthorizePage("/Donations/Delete", "AdminOnly");
+    options.Conventions.AuthorizePage("/About/Create", "AdminOnly");
+    options.Conventions.AuthorizePage("/About/Edit", "AdminOnly");
+    options.Conventions.AuthorizePage("/About/Delete", "AdminOnly");
 });
 
 // ---------- Authentication & Authorization ----------
