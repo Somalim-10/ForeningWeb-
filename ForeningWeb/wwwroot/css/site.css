@@ -20,3 +20,25 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.hero {
+  background: linear-gradient(135deg, #0062E6, #33AEFF);
+  padding: 6rem 0;
+}
+
+.features h3 {
+  font-weight: 600;
+}
+
+.features p {
+  color: #6c757d;
+}
+
+.intro {
+  background-color: #f8f9fa;
+}
+
+.upcoming-events .list-group-item {
+  border: none;
+  border-bottom: 1px solid #dee2e6;
+}
