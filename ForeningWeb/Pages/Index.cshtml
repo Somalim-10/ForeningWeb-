@@ -4,7 +4,30 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="hero text-center text-white">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Velkommen til ForeningWeb</h1>
+        <p class="lead mb-4">En moderne platform til foreninger.</p>
+        <a class="btn btn-primary btn-lg" asp-page="/Events/Index">Se vores begivenheder</a>
+    </div>
+</section>
+
+<section class="features py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h3>Arrangementer</h3>
+                <p>Deltag i spændende begivenheder i din forening.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>Donationer</h3>
+                <p>Støt vores arbejde og gør en forskel.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>Fællesskab</h3>
+                <p>Bliv en del af et engageret fællesskab.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
