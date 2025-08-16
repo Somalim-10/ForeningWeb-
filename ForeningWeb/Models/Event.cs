@@ -18,5 +18,8 @@ namespace ForeningWeb.Models
 
         [MaxLength(1000)]
         public string? Beskrivelse { get; set; }
+
+
+      
     }
 }
