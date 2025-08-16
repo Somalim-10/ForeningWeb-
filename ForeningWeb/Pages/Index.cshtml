@@ -12,6 +12,40 @@
     </div>
 </section>
 
+<section class="intro py-5 bg-light text-center">
+    <div class="container">
+        <p class="lead mb-0">ForeningWeb samler aktiviteter, donationer og fællesskab ét sted.</p>
+    </div>
+</section>
+
+<section class="upcoming-events py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Kommende begivenheder</h2>
+        @if (Model.UpcomingEvents.Any())
+        {
+            <ul class="list-group list-group-flush">
+                @foreach (var e in Model.UpcomingEvents)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div>
+                            <div class="fw-bold">@e.Titel</div>
+                            <div class="small text-muted">@e.Dato.ToString("dd.MM.yyyy") @e.Tidspunkt</div>
+                        </div>
+                        <a class="btn btn-sm btn-outline-primary" href="/Events/Details/@e.Id">Se mere</a>
+                    </li>
+                }
+            </ul>
+            <div class="text-center mt-3">
+                <a class="btn btn-primary" asp-page="/Events/Index">Se alle begivenheder</a>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-secondary text-center">Ingen kommende begivenheder.</div>
+        }
+    </div>
+</section>
+
 <section class="features py-5">
     <div class="container">
         <div class="row">
