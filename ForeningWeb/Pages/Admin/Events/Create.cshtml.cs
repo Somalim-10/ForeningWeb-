@@ -28,9 +28,23 @@ namespace ForeningWeb.Pages.Admin.Events
         {
             if (!ModelState.IsValid) return Page();
 
+            // 1. Valider billedet
+            var ok = await _svc.ValidateImageUrlAsync(Item.ImageUrl);
+            if (!ok)
+            {
+                ModelState.AddModelError("Item.ImageUrl", "Billedet kunne ikke findes online.");
+                return Page();
+            }
+
+            // 2. Gem event
             await _svc.CreateAsync(Item);
+
+            // 3. Redirect med besked
             TempData["Msg"] = "Begivenhed oprettet.";
             return RedirectToPage("/Events/Index", new { msg = "created" });
         }
+
+
     }
 }
+

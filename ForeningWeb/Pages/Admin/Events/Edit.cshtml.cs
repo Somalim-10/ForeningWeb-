@@ -30,6 +30,13 @@ namespace ForeningWeb.Pages.Admin.Events
         {
             if (!ModelState.IsValid) return Page();
 
+            var ok = await _svc.ValidateImageUrlAsync(Item.ImageUrl);
+            if (!ok)
+            {
+                ModelState.AddModelError("Item.ImageUrl", "Billedet kunne ikke findes online.");
+                return Page();
+            }
+
             await _svc.UpdateAsync(Item);
             TempData["Msg"] = "Begivenhed opdateret.";
             return RedirectToPage("/Events/Details", new { id = Item.Id });

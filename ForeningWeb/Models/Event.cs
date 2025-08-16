@@ -20,6 +20,10 @@ namespace ForeningWeb.Models
         public string? Beskrivelse { get; set; }
 
 
-      
+        [Display(Name = "Poster URL")]
+        [Url]
+        [RegularExpression(@".*\.(jpg|jpeg|png|gif|bmp|webp)$", ErrorMessage = "URL skal pege på et billede (.jpg, .jpeg, .png, .gif, .bmp, .webp)")]
+        public string? ImageUrl { get; set; }
+
     }
 }
