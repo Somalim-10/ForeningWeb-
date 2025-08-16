@@ -92,4 +92,7 @@ app.UseAuthorization(); // <--- Manglede
 
 app.MapRazorPages();    // <--- Manglede
 
+app.MapHealthChecks("/health"); // <- tilføjer endpoint til health checks
+
+
 app.Run();

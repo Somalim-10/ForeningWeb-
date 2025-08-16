@@ -272,3 +272,148 @@ LIMIT @__p_0
 2025-08-16 15:56:19.844 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 152.3181ms
 2025-08-16 15:56:19.871 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Events - 200 null text/html; charset=utf-8 5851.6615ms
 2025-08-16 15:56:20.014 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 320.8119ms
+2025-08-16 17:51:02.594 +02:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-08-16 17:51:02.672 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-08-16 17:51:02.700 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-08-16 17:51:02.731 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-08-16 17:51:02.897 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Events" AS "e")
+2025-08-16 17:51:02.909 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Donationer" AS "d")
+2025-08-16 17:51:02.915 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Kontakter" AS "k")
+2025-08-16 17:51:02.924 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Om" AS "o")
+2025-08-16 17:51:03.052 +02:00 [INF] User profile is available. Using 'C:\Users\somal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-16 17:51:03.418 +02:00 [INF] Now listening on: https://localhost:7239
+2025-08-16 17:51:03.419 +02:00 [INF] Now listening on: http://localhost:5225
+2025-08-16 17:51:03.469 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-16 17:51:03.472 +02:00 [INF] Hosting environment: Development
+2025-08-16 17:51:03.472 +02:00 [INF] Content root path: C:\Users\somal\Desktop\Projekt\ForeningWeb\ForeningWeb
+2025-08-16 17:51:04.041 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ - null null
+2025-08-16 17:51:04.257 +02:00 [INF] Executing endpoint '/Index'
+2025-08-16 17:51:04.309 +02:00 [INF] Route matched with {page = "/Index"}. Executing page /Index
+2025-08-16 17:51:04.320 +02:00 [INF] Executing handler method ForeningWeb.Pages.IndexModel.OnGet - ModelState is "Valid"
+2025-08-16 17:51:04.324 +02:00 [INF] Executed handler method OnGet, returned result .
+2025-08-16 17:51:04.329 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-16 17:51:04.332 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-16 17:51:04.460 +02:00 [INF] Executed page /Index in 145.5358ms
+2025-08-16 17:51:04.468 +02:00 [INF] Executed endpoint '/Index'
+2025-08-16 17:51:04.499 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-16 17:51:04.499 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-16 17:51:04.635 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 608.4676ms
+2025-08-16 17:51:04.650 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 151.1143ms
+2025-08-16 17:51:04.685 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 185.9242ms
+2025-08-16 17:52:09.612 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Health - null null
+2025-08-16 17:52:09.870 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Health - 404 0 null 258.9948ms
+2025-08-16 17:52:09.909 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7239/Health, Response status code: 404
+2025-08-16 17:52:24.113 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/health - null null
+2025-08-16 17:52:24.542 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/health - 404 0 null 429.2252ms
+2025-08-16 17:52:24.546 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7239/health, Response status code: 404
+2025-08-16 17:53:17.960 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-08-16 17:53:18.014 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-08-16 17:53:18.138 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-08-16 17:53:18.172 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-08-16 17:53:18.309 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Events" AS "e")
+2025-08-16 17:53:18.319 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Donationer" AS "d")
+2025-08-16 17:53:18.324 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Kontakter" AS "k")
+2025-08-16 17:53:18.329 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Om" AS "o")
+2025-08-16 17:53:18.429 +02:00 [INF] User profile is available. Using 'C:\Users\somal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-16 17:53:18.693 +02:00 [INF] Now listening on: https://localhost:7239
+2025-08-16 17:53:18.694 +02:00 [INF] Now listening on: http://localhost:5225
+2025-08-16 17:53:18.748 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-16 17:53:18.750 +02:00 [INF] Hosting environment: Development
+2025-08-16 17:53:18.752 +02:00 [INF] Content root path: C:\Users\somal\Desktop\Projekt\ForeningWeb\ForeningWeb
+2025-08-16 17:53:19.442 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ - null null
+2025-08-16 17:53:19.637 +02:00 [INF] Executing endpoint '/Index'
+2025-08-16 17:53:19.674 +02:00 [INF] Route matched with {page = "/Index"}. Executing page /Index
+2025-08-16 17:53:19.687 +02:00 [INF] Executing handler method ForeningWeb.Pages.IndexModel.OnGet - ModelState is "Valid"
+2025-08-16 17:53:19.690 +02:00 [INF] Executed handler method OnGet, returned result .
+2025-08-16 17:53:19.696 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-16 17:53:19.698 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-16 17:53:19.774 +02:00 [INF] Executed page /Index in 93.2101ms
+2025-08-16 17:53:19.780 +02:00 [INF] Executed endpoint '/Index'
+2025-08-16 17:53:19.802 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-16 17:53:19.802 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-16 17:53:19.809 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 378.1999ms
+2025-08-16 17:53:19.837 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 35.9808ms
+2025-08-16 17:53:19.869 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 68.5484ms
+2025-08-16 17:54:11.266 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-08-16 17:54:11.309 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-08-16 17:54:11.334 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-08-16 17:54:11.385 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-08-16 17:54:11.513 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Events" AS "e")
+2025-08-16 17:54:11.518 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Donationer" AS "d")
+2025-08-16 17:54:11.522 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Kontakter" AS "k")
+2025-08-16 17:54:11.526 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Om" AS "o")
+2025-08-16 17:54:11.617 +02:00 [INF] User profile is available. Using 'C:\Users\somal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-16 17:54:11.869 +02:00 [INF] Now listening on: https://localhost:7239
+2025-08-16 17:54:11.870 +02:00 [INF] Now listening on: http://localhost:5225
+2025-08-16 17:54:11.925 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-16 17:54:11.927 +02:00 [INF] Hosting environment: Development
+2025-08-16 17:54:11.928 +02:00 [INF] Content root path: C:\Users\somal\Desktop\Projekt\ForeningWeb\ForeningWeb
+2025-08-16 17:54:13.096 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ - null null
+2025-08-16 17:54:13.319 +02:00 [INF] Executing endpoint '/Index'
+2025-08-16 17:54:13.350 +02:00 [INF] Route matched with {page = "/Index"}. Executing page /Index
+2025-08-16 17:54:13.363 +02:00 [INF] Executing handler method ForeningWeb.Pages.IndexModel.OnGet - ModelState is "Valid"
+2025-08-16 17:54:13.367 +02:00 [INF] Executed handler method OnGet, returned result .
+2025-08-16 17:54:13.373 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-16 17:54:13.374 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-16 17:54:13.459 +02:00 [INF] Executed page /Index in 100.3412ms
+2025-08-16 17:54:13.467 +02:00 [INF] Executed endpoint '/Index'
+2025-08-16 17:54:13.478 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 392.9919ms
+2025-08-16 17:54:13.498 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-16 17:54:13.498 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-16 17:54:13.516 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 20.0078ms
+2025-08-16 17:54:13.640 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 142.3581ms
+2025-08-16 18:00:46.307 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/health - null null
+2025-08-16 18:00:46.580 +02:00 [INF] Executing endpoint 'Health checks'
+2025-08-16 18:00:46.720 +02:00 [INF] Executed endpoint 'Health checks'
+2025-08-16 18:00:46.734 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/health - 200 null text/plain 427.1967ms
