@@ -14,5 +14,6 @@ namespace ForeningWeb.Models
 
         // Sti til QR-kode billede
         public string? QrKodePath { get; set; }
+        //11
     }
 }
