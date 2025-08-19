@@ -14,3 +14,4 @@ namespace ForeningWeb.Pages.Donations
         public async Task OnGetAsync() => Items = await _svc.GetAllAsync();
     }
 }
+//11
