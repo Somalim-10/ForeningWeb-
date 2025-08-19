@@ -29,6 +29,10 @@ builder.Services.AddScoped<DonationService>();
 builder.Services.AddScoped<KontaktService>();
 builder.Services.AddScoped<OmService>();
 
+
+builder.Services.AddHttpClient();   // <--- DENNE LINJE SKAL MED
+
+
 // Admin options (ngle fra appsettings)
 builder.Services.Configure<AdminOptions>(
     builder.Configuration.GetSection("Admin"));
@@ -91,5 +95,8 @@ app.UseAuthentication();
 app.UseAuthorization(); // <--- Manglede
 
 app.MapRazorPages();    // <--- Manglede
+
+app.MapHealthChecks("/health"); // <- tilføjer endpoint til health checks
+
 
 app.Run();

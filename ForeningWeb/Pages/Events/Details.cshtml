@@ -14,6 +14,10 @@
         <div class="text-muted mb-3">
             @Model.Item.Dato.ToString("dd.MM.yyyy") @Model.Item.Tidspunkt
         </div>
+        @if (!string.IsNullOrWhiteSpace(Model.Item.ImageUrl))
+        {
+            <img src="@Model.Item.ImageUrl" alt="Poster for @Model.Item.Titel" class="img-fluid mb-3" />
+        }
         <p>@Model.Item.Beskrivelse</p>
         <a class="btn btn-secondary" href="/Events">Tilbage</a>
     }

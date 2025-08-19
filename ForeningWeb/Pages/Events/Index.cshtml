@@ -5,6 +5,10 @@
 }
 <div class="container py-4">
     <h2>Begivenheder</h2>
+    @if (User.HasClaim("role", "admin"))
+    {
+        <p><a class="btn btn-success" asp-page="/Admin/Events/Create">+ Opret ny begivenhed</a></p>
+    }
     @if (!Model.Items.Any())
     {
         <div class="alert alert-secondary">Ingen begivenheder endnu.</div>
@@ -23,6 +27,18 @@
                         @if (!string.IsNullOrWhiteSpace(e.Beskrivelse))
                         {
                             <div>@e.Beskrivelse</div>
+                        }
+                        <div class="btn-group btn-group-sm" role="group">
+                            <a class="btn btn-outline-primary" href="/Events/Details/@e.Id">Se mere</a>
+                            @if (User.HasClaim("role", "admin"))
+                            {
+                                <a class="btn btn-outline-secondary" asp-page="/Admin/Events/Edit" asp-route-id="@e.Id">Rediger</a>
+                                <a class="btn btn-outline-danger" asp-page="/Admin/Events/Delete" asp-route-id="@e.Id">Slet</a>
+                            }
+                        </div>
+                        @if (!string.IsNullOrWhiteSpace(e.ImageUrl))
+                        {
+                            <div class="mt-2"><img src="@e.ImageUrl" alt="Poster for @e.Titel" class="img-fluid" style="max-height:200px;" /></div>
                         }
                     </div>
                     <a class="btn btn-sm btn-outline-primary" href="/Events/Details/@e.Id">Se mere</a>
