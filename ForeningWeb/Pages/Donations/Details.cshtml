@@ -10,9 +10,16 @@
     <strong>Besked:</strong> @Model.Item?.Besked
 </div>
 <div>
+    <strong>QR-kode:</strong>
+    @if (!string.IsNullOrWhiteSpace(Model.Item?.QrKodePath))
+    {
+        <img src="@Model.Item?.QrKodePath" alt="QR-kode" style="max-width:200px;" />
+    }
+</div>
+<div>
     @if (User.HasClaim("role", "admin"))
     {
-        <a asp-page="Edit" asp-route-id="@Model.Item?.Id">Rediger</a> 
+        <a asp-page="Edit" asp-route-id="@Model.Item?.Id">Rediger</a>
     }
     <a asp-page="Index">Tilbage</a>
 </div>
