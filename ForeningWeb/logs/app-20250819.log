@@ -703,3 +703,236 @@ FROM "Om" AS "o"
 2025-08-19 18:31:11.266 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
 2025-08-19 18:31:11.282 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 15.7625ms
 2025-08-19 18:31:11.288 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.1619ms
+2025-08-19 21:00:06.566 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2025-08-19 21:00:06.696 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2025-08-19 21:00:06.704 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-08-19 21:00:06.710 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-08-19 21:00:06.735 +02:00 [INF] Applying migration '20250809132717_InitialCreate'.
+2025-08-19 21:00:06.751 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Events" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Events" PRIMARY KEY AUTOINCREMENT,
+    "Titel" TEXT NOT NULL,
+    "Dato" TEXT NOT NULL,
+    "Tidspunkt" TEXT NULL,
+    "Beskrivelse" TEXT NULL
+);
+2025-08-19 21:00:06.754 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250809132717_InitialCreate', '8.0.7');
+2025-08-19 21:00:06.760 +02:00 [INF] Applying migration '20250812225731_AddOmKontaktDonation'.
+2025-08-19 21:00:06.765 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Kontakter" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Kontakter" PRIMARY KEY AUTOINCREMENT,
+    "Navn" TEXT NOT NULL,
+    "Email" TEXT NULL,
+    "Telefon" TEXT NULL,
+    "Adresse" TEXT NULL
+);
+2025-08-19 21:00:06.767 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Om" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Om" PRIMARY KEY AUTOINCREMENT,
+    "Indhold" TEXT NOT NULL,
+    "BilledePath" TEXT NULL
+);
+2025-08-19 21:00:06.770 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250812225731_AddOmKontaktDonation', '8.0.7');
+2025-08-19 21:00:06.773 +02:00 [INF] Applying migration '20250813155558_AddNyFunktion'.
+2025-08-19 21:00:06.778 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Donationer" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Donationer" PRIMARY KEY AUTOINCREMENT,
+    "MobilePayNummer" TEXT NOT NULL,
+    "Besked" TEXT NULL,
+    "QrKodePath" TEXT NULL
+);
+2025-08-19 21:00:06.781 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250813155558_AddNyFunktion', '8.0.7');
+2025-08-19 21:00:06.791 +02:00 [INF] Applying migration '20250816172731_Billedetilføjelse'.
+2025-08-19 21:00:06.799 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE "Events" ADD "ImageUrl" TEXT NULL;
+2025-08-19 21:00:06.801 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20250816172731_Billedetilføjelse', '8.0.7');
+2025-08-19 21:00:06.978 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Events" AS "e")
+2025-08-19 21:00:07.073 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Donationer" AS "d")
+2025-08-19 21:00:07.212 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Kontakter" AS "k")
+2025-08-19 21:00:07.233 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Om" AS "o")
+2025-08-19 21:00:07.293 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 15), @p1='?' (Size = 6), @p2='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Donationer" ("Besked", "MobilePayNummer", "QrKodePath")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2025-08-19 21:00:07.310 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 27), @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?' (Size = 12)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Events" ("Beskrivelse", "Dato", "ImageUrl", "Tidspunkt", "Titel")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-08-19 21:00:07.337 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (Size = 19), @p2='?' (Size = 7), @p3='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Kontakter" ("Adresse", "Email", "Navn", "Telefon")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2025-08-19 21:00:07.352 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (Size = 29)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Om" ("BilledePath", "Indhold")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2025-08-19 21:00:07.489 +02:00 [INF] User profile is available. Using 'C:\Users\somal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-19 21:00:07.880 +02:00 [INF] Now listening on: https://localhost:7239
+2025-08-19 21:00:07.883 +02:00 [INF] Now listening on: http://localhost:5225
+2025-08-19 21:00:07.937 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-19 21:00:07.938 +02:00 [INF] Hosting environment: Development
+2025-08-19 21:00:07.940 +02:00 [INF] Content root path: C:\Users\somal\Desktop\Projekt\ForeningWeb\ForeningWeb
+2025-08-19 21:00:08.557 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ - null null
+2025-08-19 21:00:08.803 +02:00 [INF] Executing endpoint '/Index'
+2025-08-19 21:00:08.826 +02:00 [INF] Route matched with {page = "/Index"}. Executing page /Index
+2025-08-19 21:00:08.838 +02:00 [INF] Executing handler method ForeningWeb.Pages.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-19 21:00:08.900 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Beskrivelse", "e"."Dato", "e"."ImageUrl", "e"."Tidspunkt", "e"."Titel"
+FROM "Events" AS "e"
+ORDER BY "e"."Dato" DESC
+2025-08-19 21:00:08.920 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-19 21:00:08.926 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-19 21:00:08.928 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-19 21:00:09.116 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/css/site.css?v=2_d4gZAISjKzFafce-3P6yiAl_BdUKQbTj8BbyzWqdc - null null
+2025-08-19 21:00:09.116 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-19 21:00:09.117 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-19 21:00:09.138 +02:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\somal\Desktop\Projekt\ForeningWeb\ForeningWeb\wwwroot\css\site.css'
+2025-08-19 21:00:09.134 +02:00 [INF] Executed page /Index in 300.3614ms
+2025-08-19 21:00:09.159 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/css/site.css?v=2_d4gZAISjKzFafce-3P6yiAl_BdUKQbTj8BbyzWqdc - 200 678 text/css 43.3437ms
+2025-08-19 21:00:09.154 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 33.9318ms
+2025-08-19 21:00:09.171 +02:00 [INF] Executed endpoint '/Index'
+2025-08-19 21:00:09.215 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 98.2959ms
+2025-08-19 21:00:09.227 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 678.4059ms
+2025-08-19 21:00:30.251 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Events - null null
+2025-08-19 21:00:30.369 +02:00 [INF] Executing endpoint '/Events/Index'
+2025-08-19 21:00:30.380 +02:00 [INF] Route matched with {page = "/Events/Index"}. Executing page /Events/Index
+2025-08-19 21:00:30.385 +02:00 [INF] Executing handler method ForeningWeb.Pages.Events.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-19 21:00:30.556 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Beskrivelse", "e"."Dato", "e"."ImageUrl", "e"."Tidspunkt", "e"."Titel"
+FROM "Events" AS "e"
+ORDER BY "e"."Dato" DESC
+LIMIT @__p_0
+2025-08-19 21:00:30.562 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-19 21:00:30.565 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-19 21:00:30.567 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-19 21:00:30.592 +02:00 [INF] Executed page /Events/Index in 208.9608ms
+2025-08-19 21:00:30.595 +02:00 [INF] Executed endpoint '/Events/Index'
+2025-08-19 21:00:30.633 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-19 21:00:30.634 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Events - 200 null text/html; charset=utf-8 384.7542ms
+2025-08-19 21:00:30.665 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 31.2434ms
+2025-08-19 21:00:30.635 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-19 21:00:30.811 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 176.7123ms
+2025-08-19 21:00:37.697 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Events - null null
+2025-08-19 21:00:37.785 +02:00 [INF] Executing endpoint '/Events/Index'
+2025-08-19 21:00:37.787 +02:00 [INF] Route matched with {page = "/Events/Index"}. Executing page /Events/Index
+2025-08-19 21:00:37.795 +02:00 [INF] Executing handler method ForeningWeb.Pages.Events.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-19 21:00:37.805 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Beskrivelse", "e"."Dato", "e"."ImageUrl", "e"."Tidspunkt", "e"."Titel"
+FROM "Events" AS "e"
+ORDER BY "e"."Dato" DESC
+LIMIT @__p_0
+2025-08-19 21:00:37.812 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-19 21:00:37.814 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-19 21:00:37.817 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-19 21:00:37.828 +02:00 [INF] Executed page /Events/Index in 37.4429ms
+2025-08-19 21:00:37.830 +02:00 [INF] Executed endpoint '/Events/Index'
+2025-08-19 21:00:37.842 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-19 21:00:37.843 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-19 21:00:37.844 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Events - 200 null text/html; charset=utf-8 146.9628ms
+2025-08-19 21:00:37.854 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 12.3451ms
+2025-08-19 21:00:38.012 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 169.0063ms
+2025-08-19 21:00:40.089 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Events - null null
+2025-08-19 21:00:40.150 +02:00 [INF] Executing endpoint '/Events/Index'
+2025-08-19 21:00:40.154 +02:00 [INF] Route matched with {page = "/Events/Index"}. Executing page /Events/Index
+2025-08-19 21:00:40.160 +02:00 [INF] Executing handler method ForeningWeb.Pages.Events.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-19 21:00:40.166 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Beskrivelse", "e"."Dato", "e"."ImageUrl", "e"."Tidspunkt", "e"."Titel"
+FROM "Events" AS "e"
+ORDER BY "e"."Dato" DESC
+LIMIT @__p_0
+2025-08-19 21:00:40.176 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-19 21:00:40.180 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-19 21:00:40.183 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-19 21:00:40.206 +02:00 [INF] Executed page /Events/Index in 46.1006ms
+2025-08-19 21:00:40.233 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-19 21:00:40.234 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-19 21:00:40.237 +02:00 [INF] Executed endpoint '/Events/Index'
+2025-08-19 21:00:40.243 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 9.8974ms
+2025-08-19 21:00:40.251 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Events - 200 null text/html; charset=utf-8 162.4973ms
+2025-08-19 21:00:40.282 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.6217ms
+2025-08-19 21:00:41.848 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/About - null null
+2025-08-19 21:00:41.909 +02:00 [INF] Executing endpoint '/About/Index'
+2025-08-19 21:00:41.928 +02:00 [INF] Route matched with {page = "/About/Index"}. Executing page /About/Index
+2025-08-19 21:00:41.932 +02:00 [INF] Executing handler method ForeningWeb.Pages.About.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-19 21:00:41.946 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "o"."Id", "o"."BilledePath", "o"."Indhold"
+FROM "Om" AS "o"
+2025-08-19 21:00:41.952 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-19 21:00:41.954 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-19 21:00:41.961 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-19 21:00:41.984 +02:00 [INF] Executed page /About/Index in 52.8585ms
+2025-08-19 21:00:41.986 +02:00 [INF] Executed endpoint '/About/Index'
+2025-08-19 21:00:41.987 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/About - 200 null text/html; charset=utf-8 139.3811ms
+2025-08-19 21:00:41.999 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-19 21:00:41.999 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-19 21:00:42.016 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 17.3652ms
+2025-08-19 21:00:42.051 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.8095ms
+2025-08-19 21:00:43.298 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Contacts - null null
+2025-08-19 21:00:43.380 +02:00 [INF] Executing endpoint '/Contacts/Index'
+2025-08-19 21:00:43.387 +02:00 [INF] Route matched with {page = "/Contacts/Index"}. Executing page /Contacts/Index
+2025-08-19 21:00:43.391 +02:00 [INF] Executing handler method ForeningWeb.Pages.Contacts.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-19 21:00:43.404 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "k"."Id", "k"."Adresse", "k"."Email", "k"."Navn", "k"."Telefon"
+FROM "Kontakter" AS "k"
+2025-08-19 21:00:43.410 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-19 21:00:43.413 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-19 21:00:43.416 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-19 21:00:43.431 +02:00 [INF] Executed page /Contacts/Index in 40.9313ms
+2025-08-19 21:00:43.433 +02:00 [INF] Executed endpoint '/Contacts/Index'
+2025-08-19 21:00:43.436 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Contacts - 200 null text/html; charset=utf-8 137.3159ms
+2025-08-19 21:00:43.460 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-19 21:00:43.460 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-19 21:00:43.468 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 8.027ms
+2025-08-19 21:00:43.618 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 157.9598ms
+2025-08-19 21:00:45.517 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Donations - null null
+2025-08-19 21:00:45.590 +02:00 [INF] Executing endpoint '/Donations/Index'
+2025-08-19 21:00:45.597 +02:00 [INF] Route matched with {page = "/Donations/Index"}. Executing page /Donations/Index
+2025-08-19 21:00:45.601 +02:00 [INF] Executing handler method ForeningWeb.Pages.Donations.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-08-19 21:00:45.615 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "d"."Id", "d"."Besked", "d"."MobilePayNummer", "d"."QrKodePath"
+FROM "Donationer" AS "d"
+2025-08-19 21:00:45.619 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-08-19 21:00:45.621 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-08-19 21:00:45.625 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-08-19 21:00:45.643 +02:00 [INF] Executed page /Donations/Index in 43.7383ms
+2025-08-19 21:00:45.645 +02:00 [INF] Executed endpoint '/Donations/Index'
+2025-08-19 21:00:45.677 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-19 21:00:45.677 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/images/mobilepay.svg - null null
+2025-08-19 21:00:45.679 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Donations - 200 null text/html; charset=utf-8 162.2063ms
+2025-08-19 21:00:45.678 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/img/qr.png - null null
+2025-08-19 21:00:45.684 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 6.3887ms
+2025-08-19 21:00:45.678 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-08-19 21:00:45.810 +02:00 [INF] Sending file. Request path: '/images/mobilepay.svg'. Physical path: 'C:\Users\somal\Desktop\Projekt\ForeningWeb\ForeningWeb\wwwroot\Images\mobilepay.svg'
+2025-08-19 21:00:45.905 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/img/qr.png - 404 0 null 227.6558ms
+2025-08-19 21:00:45.948 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/images/mobilepay.svg - 200 233 image/svg+xml 270.3048ms
+2025-08-19 21:00:45.961 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 282.9448ms
+2025-08-19 21:00:45.971 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7239/img/qr.png, Response status code: 404
