@@ -1,44 +1,58 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
+.navbar-custom {
+    background-color: #1d713f;
+}
+
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link {
+        color: #fff;
+    }
+
+        .navbar-custom .navbar-brand:hover,
+        .navbar-custom .nav-link:hover {
+            color: #d4edda;
+        }
+
 .hero {
-  background: linear-gradient(135deg, #0062E6, #33AEFF);
-  padding: 6rem 0;
+    background: linear-gradient(135deg, #1d713f, #28a745);
+    padding: 6rem 0;
 }
 
 .features h3 {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .features p {
-  color: #6c757d;
+    color: #6c757d;
 }
 
 .intro {
-  background-color: #f8f9fa;
+    background-color: #f8f9fa;
 }
 
 .upcoming-events .list-group-item {
-  border: none;
-  border-bottom: 1px solid #dee2e6;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
 }
