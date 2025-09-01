@@ -1,0 +1,217 @@
+2025-09-01 09:26:07.712 +02:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-09-01 09:26:08.740 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-09-01 09:26:08.957 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-09-01 09:26:09.106 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-01 09:26:09.614 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Events" AS "e")
+2025-09-01 09:26:09.627 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Donationer" AS "d")
+2025-09-01 09:26:09.637 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Kontakter" AS "k")
+2025-09-01 09:26:09.646 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Om" AS "o")
+2025-09-01 09:26:09.920 +02:00 [INF] User profile is available. Using 'C:\Users\somal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-01 09:26:10.710 +02:00 [INF] Now listening on: https://localhost:7239
+2025-09-01 09:26:10.714 +02:00 [INF] Now listening on: http://localhost:5225
+2025-09-01 09:26:10.873 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-01 09:26:10.878 +02:00 [INF] Hosting environment: Development
+2025-09-01 09:26:10.881 +02:00 [INF] Content root path: C:\Users\somal\Desktop\Projekt\ForeningWeb\ForeningWeb
+2025-09-01 09:26:14.997 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ - null null
+2025-09-01 09:26:15.323 +02:00 [INF] Executing endpoint '/Index'
+2025-09-01 09:26:15.386 +02:00 [INF] Route matched with {page = "/Index"}. Executing page /Index
+2025-09-01 09:26:15.407 +02:00 [INF] Executing handler method ForeningWeb.Pages.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-09-01 09:26:15.500 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Beskrivelse", "e"."Dato", "e"."ImageUrl", "e"."Tidspunkt", "e"."Titel"
+FROM "Events" AS "e"
+ORDER BY "e"."Dato" DESC
+2025-09-01 09:26:15.577 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-09-01 09:26:15.583 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-09-01 09:26:15.585 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-09-01 09:26:15.847 +02:00 [INF] Executed page /Index in 429.213ms
+2025-09-01 09:26:15.864 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ForeningWeb.styles.css?v=Ea0xW-sqy4ukyFcKx-tgSZ-ZW7uiljb7xEKxLChnHXU - null null
+2025-09-01 09:26:15.889 +02:00 [INF] Executed endpoint '/Index'
+2025-09-01 09:26:15.866 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/lib/jquery/dist/jquery.min.js - null null
+2025-09-01 09:26:15.941 +02:00 [INF] The file /ForeningWeb.styles.css was not modified
+2025-09-01 09:26:15.944 +02:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-09-01 09:26:15.866 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/Images/Mosque-sunset.jpg - null null
+2025-09-01 09:26:15.864 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-09-01 09:26:15.864 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/css/site.css?v=xbivdCXNWfUBu_Yp9SxJopLt96YQTKyL9HPCVd6WCPU - null null
+2025-09-01 09:26:15.880 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-09-01 09:26:15.894 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-01 09:26:15.913 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2025-09-01 09:26:15.995 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 1012.0007ms
+2025-09-01 09:26:15.993 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/lib/jquery/dist/jquery.min.js - 304 null text/javascript 125.7374ms
+2025-09-01 09:26:15.993 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ForeningWeb.styles.css?v=Ea0xW-sqy4ukyFcKx-tgSZ-ZW7uiljb7xEKxLChnHXU - 304 null text/css 128.02ms
+2025-09-01 09:26:15.999 +02:00 [INF] The file /Images/Mosque-sunset.jpg was not modified
+2025-09-01 09:26:16.007 +02:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-09-01 09:26:16.013 +02:00 [INF] The file /css/site.css was not modified
+2025-09-01 09:26:16.019 +02:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-09-01 09:26:15.927 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-09-01 09:26:16.030 +02:00 [INF] The file /js/site.js was not modified
+2025-09-01 09:26:16.077 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 304 null text/javascript 164.4854ms
+2025-09-01 09:26:16.060 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/Images/Mosque-sunset.jpg - 304 null image/jpeg 194.9362ms
+2025-09-01 09:26:16.063 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 199.6925ms
+2025-09-01 09:26:16.066 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/css/site.css?v=xbivdCXNWfUBu_Yp9SxJopLt96YQTKyL9HPCVd6WCPU - 304 null text/css 202.6321ms
+2025-09-01 09:26:16.069 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 189.0435ms
+2025-09-01 09:26:16.030 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 136.3113ms
+2025-09-01 09:26:16.191 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 265.1477ms
+2025-09-01 09:28:02.807 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-09-01 09:28:02.927 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-09-01 09:28:02.974 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-09-01 09:28:03.014 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-01 09:28:03.181 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Events" AS "e")
+2025-09-01 09:28:03.193 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Donationer" AS "d")
+2025-09-01 09:28:03.201 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Kontakter" AS "k")
+2025-09-01 09:28:03.216 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Om" AS "o")
+2025-09-01 09:28:03.568 +02:00 [INF] User profile is available. Using 'C:\Users\somal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-01 09:28:04.407 +02:00 [INF] Now listening on: https://localhost:7239
+2025-09-01 09:28:04.411 +02:00 [INF] Now listening on: http://localhost:5225
+2025-09-01 09:28:04.552 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-01 09:28:04.565 +02:00 [INF] Hosting environment: Development
+2025-09-01 09:28:04.569 +02:00 [INF] Content root path: C:\Users\somal\Desktop\Projekt\ForeningWeb\ForeningWeb
+2025-09-01 09:28:05.011 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ - null null
+2025-09-01 09:28:05.222 +02:00 [INF] Executing endpoint '/Index'
+2025-09-01 09:28:05.271 +02:00 [INF] Route matched with {page = "/Index"}. Executing page /Index
+2025-09-01 09:28:05.290 +02:00 [INF] Executing handler method ForeningWeb.Pages.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-09-01 09:28:05.399 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Beskrivelse", "e"."Dato", "e"."ImageUrl", "e"."Tidspunkt", "e"."Titel"
+FROM "Events" AS "e"
+ORDER BY "e"."Dato" DESC
+2025-09-01 09:28:05.473 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-09-01 09:28:05.480 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-09-01 09:28:05.483 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-09-01 09:28:05.638 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-09-01 09:28:05.638 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-01 09:28:05.638 +02:00 [INF] Executed page /Index in 355.4316ms
+2025-09-01 09:28:05.670 +02:00 [INF] Executed endpoint '/Index'
+2025-09-01 09:28:05.693 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 49.8964ms
+2025-09-01 09:28:05.707 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 706.783ms
+2025-09-01 09:28:05.758 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 120.0661ms
+2025-09-01 09:34:35.407 +02:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-09-01 09:34:35.440 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-09-01 09:34:35.452 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-09-01 09:34:35.477 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-01 09:34:35.586 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Events" AS "e")
+2025-09-01 09:34:35.592 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Donationer" AS "d")
+2025-09-01 09:34:35.598 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Kontakter" AS "k")
+2025-09-01 09:34:35.601 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Om" AS "o")
+2025-09-01 09:34:35.679 +02:00 [INF] User profile is available. Using 'C:\Users\somal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-01 09:34:35.868 +02:00 [INF] Now listening on: https://localhost:7239
+2025-09-01 09:34:35.869 +02:00 [INF] Now listening on: http://localhost:5225
+2025-09-01 09:34:35.911 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-01 09:34:35.912 +02:00 [INF] Hosting environment: Development
+2025-09-01 09:34:35.913 +02:00 [INF] Content root path: C:\Users\somal\Desktop\Projekt\ForeningWeb\ForeningWeb
+2025-09-01 09:34:36.138 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ - null null
+2025-09-01 09:34:36.277 +02:00 [INF] Executing endpoint '/Index'
+2025-09-01 09:34:36.300 +02:00 [INF] Route matched with {page = "/Index"}. Executing page /Index
+2025-09-01 09:34:36.309 +02:00 [INF] Executing handler method ForeningWeb.Pages.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-09-01 09:34:36.353 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Beskrivelse", "e"."Dato", "e"."ImageUrl", "e"."Tidspunkt", "e"."Titel"
+FROM "Events" AS "e"
+ORDER BY "e"."Dato" DESC
+2025-09-01 09:34:36.391 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-09-01 09:34:36.394 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-09-01 09:34:36.396 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-09-01 09:34:36.477 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-09-01 09:34:36.477 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-01 09:34:36.483 +02:00 [INF] Executed page /Index in 177.5766ms
+2025-09-01 09:34:36.495 +02:00 [INF] Executed endpoint '/Index'
+2025-09-01 09:34:36.498 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 20.2212ms
+2025-09-01 09:34:36.506 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 373.1028ms
+2025-09-01 09:34:36.527 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.0458ms
+2025-09-01 09:39:14.500 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-09-01 09:39:14.542 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-09-01 09:39:14.575 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-09-01 09:39:14.618 +02:00 [INF] No migrations were applied. The database is already up to date.
+2025-09-01 09:39:14.738 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Events" AS "e")
+2025-09-01 09:39:14.745 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Donationer" AS "d")
+2025-09-01 09:39:14.750 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Kontakter" AS "k")
+2025-09-01 09:39:14.755 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Om" AS "o")
+2025-09-01 09:39:14.845 +02:00 [INF] User profile is available. Using 'C:\Users\somal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-01 09:39:15.085 +02:00 [INF] Now listening on: https://localhost:7239
+2025-09-01 09:39:15.086 +02:00 [INF] Now listening on: http://localhost:5225
+2025-09-01 09:39:15.138 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-01 09:39:15.139 +02:00 [INF] Hosting environment: Development
+2025-09-01 09:39:15.140 +02:00 [INF] Content root path: C:\Users\somal\Desktop\Projekt\ForeningWeb\ForeningWeb
+2025-09-01 09:39:15.812 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/ - null null
+2025-09-01 09:39:15.962 +02:00 [INF] Executing endpoint '/Index'
+2025-09-01 09:39:15.986 +02:00 [INF] Route matched with {page = "/Index"}. Executing page /Index
+2025-09-01 09:39:15.997 +02:00 [INF] Executing handler method ForeningWeb.Pages.IndexModel.OnGetAsync - ModelState is "Valid"
+2025-09-01 09:39:16.059 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "e"."Id", "e"."Beskrivelse", "e"."Dato", "e"."ImageUrl", "e"."Tidspunkt", "e"."Titel"
+FROM "Events" AS "e"
+ORDER BY "e"."Dato" DESC
+2025-09-01 09:39:16.100 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2025-09-01 09:39:16.105 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2025-09-01 09:39:16.107 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2025-09-01 09:39:16.199 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-01 09:39:16.199 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - null null
+2025-09-01 09:39:16.207 +02:00 [INF] Executed page /Index in 213.1852ms
+2025-09-01 09:39:16.216 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - 200 16507 application/javascript; charset=utf-8 16.7645ms
+2025-09-01 09:39:16.218 +02:00 [INF] Executed endpoint '/Index'
+2025-09-01 09:39:16.250 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/ - 200 null text/html; charset=utf-8 446.5734ms
+2025-09-01 09:39:16.278 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.7813ms
