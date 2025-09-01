@@ -6,8 +6,7 @@
 
 <!-- Hero sektion -->
 <section class="hero position-relative text-center text-white">
-    <img src="~/Images/Mosque-sunset.jpg" alt="Mosque at sunset"
-         class="hero-img" id="heroBackground" />
+    <img src="~/images/Mosque-sunset.jpg" alt="Mosque at sunset" class="hero-img" />
     <div class="hero-overlay d-flex flex-column justify-content-center align-items-center">
         <h1 class="display-4 fw-bold">Velkommen til ForeningWeb</h1>
         <p class="lead mb-4">En moderne platform for det somalisk-danske fællesskab.</p>
@@ -16,78 +15,86 @@
 </section>
 
 <!-- Intro -->
-<section class="intro py-5 bg-transparent text-center">
-    <img src="~/Images/Mosque-sunset.jpg" alt="Mosque at sunset"
-         class="hero-img" id="heroBackground" />
+<section class="intro py-5 bg-transparent text-center position-relative">
+    <img src="~/images/Mosque-sunset.jpg" alt="Mosque at sunset" class="hero-img" />
     <div class="container">
-        <h2 class="fw-bold mb-3">Om foreningen</h2>
-        <p class="lead mb-0">
-            Vi samler aktiviteter, undervisning, donationer og et stærkt fællesskab i trygge rammer.
-            Vores mål er at styrke det somaliske og muslimske fællesskab i Danmark – sammen.
-        </p>
+        <div class="bg-dark bg-opacity-50 p-4 rounded text-white">
+            <h2 class="fw-bold mb-3">Om foreningen</h2>
+            <p class="lead mb-0">
+                Vi samler aktiviteter, undervisning, donationer og et stærkt fællesskab i trygge rammer.
+                Vores mål er at styrke det somaliske og muslimske fællesskab i Danmark – sammen.
+            </p>
+        </div>
     </div>
 </section>
 
 <!-- Kommende begivenheder -->
-<section class="upcoming-events py-5 bg-transparent">
-    <img src="~/Images/Mosque-sunset.jpg" alt="Mosque at sunset"
-         class="hero-img" id="heroBackground" />
+<section class="upcoming-events py-5 bg-transparent position-relative">
+    <img src="~/images/Mosque-sunset.jpg" alt="Mosque at sunset" class="hero-img" />
     <div class="container">
-        <h2 class="text-center fw-bold mb-5">Kommende begivenheder</h2>
-        @if (Model.UpcomingEvents.Any())
-        {
-            <div class="row g-4">
-                @foreach (var e in Model.UpcomingEvents)
-                {
-                    <div class="col-md-4">
-                        <div class="card shadow-sm h-100">
-                            <div class="card-body text-center">
-                                <h5 class="card-title fw-bold">@e.Titel</h5>
-                                <p class="card-text text-muted">@e.Dato.ToString("dd.MM.yyyy") @e.Tidspunkt</p>
-                                <a class="btn btn-outline-success btn-sm" href="/Events/Details/@e.Id">
-                                    <i class="bi bi-info-circle"></i> Se mere
-                                </a>
+        <div class="bg-dark bg-opacity-50 p-4 rounded text-white">
+            <h2 class="text-center fw-bold mb-5">Kommende begivenheder</h2>
+
+            @if ((Model.UpcomingEvents?.Any()).GetValueOrDefault())
+            {
+                <div class="row g-4">
+                    @foreach (var e in Model.UpcomingEvents)
+                    {
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold">@e.Titel</h5>
+                                    <p class="card-text text-muted">
+                                        @e.Dato.ToString("dd.MM.yyyy") @e.Tidspunkt
+                                    </p>
+                                    <a class="btn btn-outline-success btn-sm"
+                                       asp-page="/Events/Details" asp-route-id="@e.Id">
+                                        <i class="bi bi-info-circle"></i> Se mere
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                }
-            </div>
-            <div class="text-center mt-4">
-                <a class="btn btn-success btn-lg" asp-page="/Events/Index">Se alle begivenheder</a>
-            </div>
-        }
-        else
-        {
-            <div class="alert alert-secondary text-center">Ingen kommende begivenheder.</div>
-        }
+                    }
+                </div>
+
+                <div class="text-center mt-4">
+                    <a class="btn btn-success btn-lg" asp-page="/Events/Index">Se alle begivenheder</a>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-secondary text-center">Ingen kommende begivenheder.</div>
+            }
+        </div>
     </div>
 </section>
 
 <!-- Features -->
-<section class="features py-5 bg-transparent">
-    <img src="~/Images/Mosque-sunset.jpg" alt="Mosque at sunset"
-         class="hero-img" id="heroBackground" />
+<section class="features py-5 bg-transparent position-relative">
+    <img src="~/images/Mosque-sunset.jpg" alt="Mosque at sunset" class="hero-img" />
     <div class="container">
-        <div class="row text-center g-4">
-            <div class="col-md-4">
-                <div class="p-4 shadow-sm bg-white rounded">
-                    <i class="bi bi-people display-4 text-success mb-3"></i>
-                    <h4>Fællesskab</h4>
-                    <p>Bliv en del af et engageret og stærkt muslimsk fællesskab.</p>
+        <div class="bg-dark bg-opacity-50 p-4 rounded text-white">
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="p-4 shadow-sm bg-transparent rounded h-100">
+                        <i class="bi bi-people display-4 text-success mb-3"></i>
+                        <h4>Fællesskab</h4>
+                        <p class="mb-0">Bliv en del af et engageret og stærkt muslimsk fællesskab.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4 shadow-sm bg-white rounded">
-                    <i class="bi bi-calendar-check display-4 text-success mb-3"></i>
-                    <h4>Arrangementer</h4>
-                    <p>Deltag i spændende aktiviteter, fredagsbønner og undervisning.</p>
+                <div class="col-md-4">
+                    <div class="p-4 shadow-sm bg-transparent rounded h-100">
+                        <i class="bi bi-calendar-check display-4 text-success mb-3"></i>
+                        <h4>Arrangementer</h4>
+                        <p class="mb-0">Deltag i spændende aktiviteter, fredagsbønner og undervisning.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-4 shadow-sm bg-white rounded">
-                    <i class="bi bi-heart-fill display-4 text-success mb-3"></i>
-                    <h4>Donationer</h4>
-                    <p>Støt vores arbejde og vær med til at gøre en forskel.</p>
+                <div class="col-md-4">
+                    <div class="p-4 shadow-sm bg-transparent rounded h-100">
+                        <i class="bi bi-heart-fill display-4 text-success mb-3"></i>
+                        <h4>Donationer</h4>
+                        <p class="mb-0">Støt vores arbejde og vær med til at gøre en forskel.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,19 +103,19 @@
 
 @section Scripts {
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const heroBackground = document.getElementById('heroBackground');
+        // Gør alle hero-billeder lidt transparente ved scroll (ikke kun det første)
+        document.addEventListener('DOMContentLoaded', function () {
+            const heroImages = document.querySelectorAll('.hero-img');
 
-            window.addEventListener('scroll', function() {
-                // Beregn scroll-position (0-1)
-                const scrollPosition = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+            function updateOpacity() {
+                const maxScroll = document.body.scrollHeight - window.innerHeight;
+                const ratio = maxScroll > 0 ? (window.scrollY / maxScroll) : 0;
+                const opacity = Math.max(1 - (ratio * 1), 0.7);
+                heroImages.forEach(img => img.style.opacity = opacity);
+            }
 
-                // Beregn opacity (1 ved toppen, 0.3 ved bunden)
-                const opacity = Math.max(1 - (scrollPosition * 2), 0.3);
-
-                // Anvend opacity på baggrundsbilledet
-                heroBackground.style.opacity = opacity;
-            });
+            window.addEventListener('scroll', updateOpacity);
+            updateOpacity();
         });
     </script>
 }
