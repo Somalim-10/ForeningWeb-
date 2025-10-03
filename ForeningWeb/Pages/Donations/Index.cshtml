@@ -1,49 +1,37 @@
 @page
 @model ForeningWeb.Pages.Donations.IndexModel
 
-<h1>Donationer</h1>
-<div class="mb-3">
-    <img src="~/images/mobilepay.svg" alt="MobilePay" style="max-width:200px;" />
-</div>
-@if (User.HasClaim("role", "admin"))
-{
-    <p><a asp-page="Create">Opret ny</a></p>
-}
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>MobilePay</th>
-            <th>Besked</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Items)
-{
-        <tr>
-            <td>@item.MobilePayNummer</td>
-            <td>@item.Besked</td>
-                <td>
-                    @if (!string.IsNullOrWhiteSpace(item.QrKodePath))
-                    {
-                        <img src="@item.QrKodePath" alt="QR-kode" style="max-width:150px;" />
-                    }
-                </td>
-
-            <td>
-                @if (User.HasClaim("role", "admin"))
-                {
-                        <a asp-page="Edit" asp-route-id="@item.Id">Rediger</a>
-
-                }
-                <a asp-page="Details" asp-route-id="@item.Id">Detaljer</a>
-                @if (User.HasClaim("role", "admin"))
-                {
-                     <a asp-page="Delete" asp-route-id="@item.Id">Slet</a>
-                }
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<section class="donation-hero py-5 text-center text-white" style="background: linear-gradient(120deg, #2563eb 0%, #fbbf24 100%); min-height: 90vh; display: flex; align-items: center; border-radius: 2rem;">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-4 fw-bold mb-3">
+                    <i class="bi bi-heart-fill text-danger me-2"></i>Støt vores arbejde
+                </h1>
+                <p class="lead mb-4">
+                    Din støtte gør en forskel! Hjælp os med at skabe aktiviteter, støtte unge og styrke fællesskabet.<br>
+                    Vælg en af mulighederne herunder for at donere nemt og sikkert.
+                </p>
+                <a class="btn btn-warning btn-lg shadow px-5 mb-3 rounded-pill" asp-page="/Donations/Create">
+                    <i class="bi bi-cash-coin me-2"></i>Giv en donation
+                </a>
+                <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-4 mt-4">
+                    <div class="bg-white rounded-4 shadow-sm p-4 d-flex align-items-center" style="min-width: 260px;">
+                        <img src="~/images/mobilepay.svg" alt="MobilePay" style="max-width:60px;" class="me-3" />
+                        <div class="text-start">
+                            <div class="fw-bold text-dark">MobilePay</div>
+                            <div class="text-primary fs-5">@Model.Items.FirstOrDefault()?.MobilePayNummer</div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-4 shadow-sm p-4 d-flex align-items-center" style="min-width: 260px;">
+                        <img src="~/images/donation-illustration.svg" alt="Donation" style="max-width:60px;" class="me-3" />
+                        <div class="text-start">
+                            <div class="fw-bold text-dark">Bankoverførsel</div>
+                            <div class="text-secondary">Reg. nr. 1234<br>Konto nr. 5678901234</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

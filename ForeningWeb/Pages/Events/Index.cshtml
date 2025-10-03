@@ -3,47 +3,76 @@
 @{
     ViewData["Title"] = "Begivenheder";
 }
-<div class="container py-4">
-    <h2>Begivenheder</h2>
-    @if (User.HasClaim("role", "admin"))
-    {
-        <p><a class="btn btn-success" asp-page="/Admin/Events/Create">+ Opret ny begivenhed</a></p>
-    }
-    @if (!Model.Items.Any())
-    {
-        <div class="alert alert-secondary">Ingen begivenheder endnu.</div>
-    }
-    else
-    {
-        <ul class="list-group">
-            @foreach (var e in Model.Items)
+
+<section class="events-section py-5 position-relative" style="background: linear-gradient(120deg, #2563eb 0%, #1e293b 100%); min-height: 400px;">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4 text-white">
+            <h1 class="display-4 fw-bold mb-0"><i class="bi bi-calendar-event me-2"></i>Begivenheder</h1>
+            @if (User.HasClaim("role", "admin"))
             {
-                <li class="list-group-item d-flex justify-content-between align-items-start">
-                    <div>
-                        <div class="fw-bold">@e.Titel</div>
-                        <div class="small text-muted">
-                            @e.Dato.ToString("dd.MM.yyyy") @e.Tidspunkt
-                        </div>
-                        @if (!string.IsNullOrWhiteSpace(e.Beskrivelse))
-                        {
-                            <div>@e.Beskrivelse</div>
-                        }
-                        <div class="btn-group btn-group-sm" role="group">
-                            <a class="btn btn-outline-primary" href="/Events/Details/@e.Id">Se mere</a>
-                            @if (User.HasClaim("role", "admin"))
-                            {
-                                <a class="btn btn-outline-secondary" asp-page="/Admin/Events/Edit" asp-route-id="@e.Id">Rediger</a>
-                                <a class="btn btn-outline-danger" asp-page="/Admin/Events/Delete" asp-route-id="@e.Id">Slet</a>
-                            }
-                        </div>
-                        @if (!string.IsNullOrWhiteSpace(e.ImageUrl))
-                        {
-                            <div class="mt-2"><img src="@e.ImageUrl" alt="Poster for @e.Titel" class="img-fluid" style="max-height:200px;" /></div>
-                        }
-                    </div>
-                    <a class="btn btn-sm btn-outline-primary" href="/Events/Details/@e.Id">Se mere</a>
-                </li>
+                <a class="btn btn-warning text-dark fw-bold" asp-page="/Admin/Events/Create">
+                    <i class="bi bi-plus-circle"></i> Opret ny begivenhed
+                </a>
             }
-        </ul>
-    }
-</div>
+        </div>
+        @if (!(Model.Items?.Any() ?? false))
+        {
+            <div class="alert alert-info text-center shadow-sm">
+                <i class="bi bi-calendar-x"></i> Ingen begivenheder endnu.
+            </div>
+        }
+        else
+        {
+            <div class="row g-4">
+                @foreach (var e in Model.Items)
+                {
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-lg border-0" style="background: linear-gradient(120deg, #fff 60%, #2563eb10 100%);">
+                            @if (!string.IsNullOrWhiteSpace(e.ImageUrl))
+                            {
+                                <img src="@e.ImageUrl"
+                                     alt="Poster for @e.Titel"
+                                     class="card-img-top"
+                                     style="object-fit:cover; height:200px;">
+                            }
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-primary">@e.Titel</h5>
+                                <span class="badge bg-success mb-2">
+                                    <i class="bi bi-calendar-event"></i> @e.Dato.ToString("dd.MM.yyyy") @e.Tidspunkt
+                                </span>
+                                @if (!string.IsNullOrWhiteSpace(e.Beskrivelse))
+                                {
+                                    <p class="card-text text-muted flex-grow-1">@e.Beskrivelse</p>
+                                }
+                                <div class="mt-auto">
+                                    <a class="btn btn-outline-primary btn-sm" asp-page="Details" asp-route-id="@e.Id">
+                                        <i class="bi bi-info-circle"></i> Se mere
+                                    </a>
+                                    @if (User.HasClaim("role", "admin"))
+                                    {
+                                        <a class="btn btn-outline-secondary btn-sm"
+                                           asp-page="/Admin/Events/Edit"
+                                           asp-route-id="@e.Id">
+                                            <i class="bi bi-pencil"></i> Rediger
+                                        </a>
+                                        <a class="btn btn-outline-danger btn-sm"
+                                           asp-page="/Admin/Events/Delete"
+                                           asp-route-id="@e.Id">
+                                            <i class="bi bi-trash"></i> Slet
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+        <div class="text-center mt-4">
+            <a class="btn btn-light rounded-pill px-4" href="#moreEvents" style="background-color: rgba(255, 255, 255, 0.8);">
+                <i class="bi bi-arrow-down-circle"></i> Se flere begivenheder
+            </a>
+        </div>
+    </div>
+</section>

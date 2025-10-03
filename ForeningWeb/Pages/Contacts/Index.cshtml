@@ -1,40 +1,54 @@
 @page
 @model ForeningWeb.Pages.Contacts.IndexModel
 
-<h1>Kontakter</h1>
-@if (User.HasClaim("role", "admin"))
-{
-    <p><a asp-page="Create">Opret ny</a></p>
-}
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Navn</th>
-            <th>Email</th>
-            <th>Telefon</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Items)
-{
-        <tr>
-            <td>@item.Navn</td>
-            <td>@item.Email</td>
-            <td>@item.Telefon</td>
-            <td>
-                @if (User.HasClaim("role", "admin"))
-                {
-                    <a asp-page="Edit" asp-route-id="@item.Id">Rediger</a> 
-                }
-                <a asp-page="Details" asp-route-id="@item.Id">Detaljer</a>
-                @if (User.HasClaim("role", "admin"))
-                {
-                     <a asp-page="Delete" asp-route-id="@item.Id">Slet</a>
-                }
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<section class="contact-section py-5" style="background: linear-gradient(120deg, #2563eb 0%, #1e293b 100%); min-height: 400px;">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center text-white">
+                <h1 class="display-5 fw-bold mb-3"><i class="bi bi-person-lines-fill me-2"></i>Kontakt os</h1>
+                <p class="lead mb-0">Har du spørgsmål, brug for hjælp eller vil du i kontakt med foreningen? Vi står klar til at hjælpe dig!</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg border-0 mb-4">
+                    <div class="card-body text-center">
+                        <img src="~/images/formand.jpg" alt="Formand" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover; border: 4px solid #2563eb;">
+                        <h4 class="fw-bold mb-1">@Model.Items.FirstOrDefault()?.Navn ?? "Formand"</h4>
+                        <p class="mb-1 text-muted">Formand</p>
+                        <p class="mb-1"><i class="bi bi-envelope me-1"></i> <a href="mailto:@Model.Items.FirstOrDefault()?.Email" class="text-decoration-none">@Model.Items.FirstOrDefault()?.Email</a></p>
+                        <p class="mb-0"><i class="bi bi-telephone me-1"></i> @Model.Items.FirstOrDefault()?.Telefon</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-lg border-0 mb-4">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-people me-2"></i>Bestyrelse & kontaktpersoner</h5>
+                        <ul class="list-group list-group-flush">
+                            @foreach (var item in Model.Items)
+                            {
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>
+                                        <i class="bi bi-person-circle text-primary me-2"></i>
+                                        <strong>@item.Navn</strong>
+                                    </span>
+                                    <span>
+                                        <a href="mailto:@item.Email" class="text-decoration-none me-2"><i class="bi bi-envelope"></i></a>
+                                        <a href="tel:@item.Telefon" class="text-decoration-none"><i class="bi bi-telephone"></i></a>
+                                    </span>
+                                </li>
+                            }
+                        </ul>
+                        @if (User.HasClaim("role", "admin"))
+                        {
+                            <div class="mt-3 text-end">
+                                <a class="btn btn-outline-primary btn-sm" asp-page="Create"><i class="bi bi-plus-circle"></i> Opret ny</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

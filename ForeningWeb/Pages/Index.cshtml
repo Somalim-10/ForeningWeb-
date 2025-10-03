@@ -1,67 +1,139 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Forside";
 }
 
-<section class="hero text-center text-white">
-    <div class="container">
-        <h1 class="display-4 fw-bold">Velkommen til ForeningWeb</h1>
-        <p class="lead mb-4">En moderne platform til foreninger.</p>
-        <a class="btn btn-primary btn-lg" asp-page="/Events/Index">Se vores begivenheder</a>
+<!-- Hero sektion -->
+<section class="hero position-relative text-center text-white mb-0">
+    <img src="~/images/Mosque-sunset.jpg" alt="Mosque at sunset" class="hero-img" />
+    <div class="hero-overlay d-flex flex-column justify-content-center align-items-center">
+        <h1 class="display-3 fw-bold mb-3">Velkommen til ForeningWeb</h1>
+        <p class="lead mb-4">Samlingspunkt for det somalisk-danske fællesskab – aktiviteter, venskab og tro.</p>
+        <a class="btn btn-primary btn-lg shadow" asp-page="/Events/Index"><i class="bi bi-calendar-event me-2"></i>Se vores begivenheder</a>
+        <a class="btn btn-outline-light btn-lg mt-2" asp-page="/Contacts/Index"><i class="bi bi-person-plus me-2"></i>Bliv medlem</a>
     </div>
 </section>
 
-<section class="intro py-5 bg-light text-center">
-    <div class="container">
-        <p class="lead mb-0">ForeningWeb samler aktiviteter, donationer og fællesskab ét sted.</p>
-    </div>
-</section>
-
-<section class="upcoming-events py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Kommende begivenheder</h2>
-        @if (Model.UpcomingEvents.Any())
-        {
-            <ul class="list-group list-group-flush">
-                @foreach (var e in Model.UpcomingEvents)
-                {
-                    <li class="list-group-item d-flex justify-content-between align-items-start">
-                        <div>
-                            <div class="fw-bold">@e.Titel</div>
-                            <div class="small text-muted">@e.Dato.ToString("dd.MM.yyyy") @e.Tidspunkt</div>
-                        </div>
-                        <a class="btn btn-sm btn-outline-primary" href="/Events/Details/@e.Id">Se mere</a>
-                    </li>
-                }
+<!-- Om foreningen - fylder hele siden -->
+<section class="about-section py-5 position-relative" style="background: linear-gradient(120deg, #2563eb 0%, #1e293b 100%); min-height: 400px;">
+    <div class="container-fluid px-0">
+        <div class="d-flex flex-column justify-content-center align-items-center text-white" style="min-height: 400px;">
+            <h2 class="display-5 fw-bold mb-4">Om foreningen</h2>
+            <p class="lead mb-3" style="max-width: 700px;">
+                ForeningWeb er et samlingspunkt for det somalisk-danske fællesskab. Vi tilbyder aktiviteter, undervisning, sociale arrangementer og støtte til både unge og voksne. Vores vision er at styrke fællesskab, identitet og sammenhold gennem respekt, åbenhed, engagement og tro. Alle er velkomne – uanset baggrund.
+            </p>
+            <ul class="list-unstyled mb-0" style="font-size:1.2rem;">
+                <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Vision: Styrke fællesskab og identitet</li>
+                <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Værdier: Respekt, åbenhed, engagement og tro</li>
+                <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Alle er velkomne</li>
             </ul>
-            <div class="text-center mt-3">
-                <a class="btn btn-primary" asp-page="/Events/Index">Se alle begivenheder</a>
-            </div>
-        }
-        else
-        {
-            <div class="alert alert-secondary text-center">Ingen kommende begivenheder.</div>
-        }
+        </div>
     </div>
 </section>
 
-<section class="features py-5">
+<!-- Kommende begivenheder -->
+<section class="upcoming-events py-5 bg-transparent position-relative">
+    <img src="~/images/Mosque-sunset.jpg" alt="Mosque at sunset" class="hero-img" />
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <h3>Arrangementer</h3>
-                <p>Deltag i spændende begivenheder i din forening.</p>
+        <div class="bg-dark bg-opacity-50 p-4 rounded text-white">
+            <h2 class="text-center fw-bold mb-5">Kommende begivenheder</h2>
+            @if ((Model.UpcomingEvents?.Any()).GetValueOrDefault())
+            {
+                <div class="row g-4">
+                    @foreach (var e in Model.UpcomingEvents)
+                    {
+                        <div class="col-md-4">
+                            <div class="card shadow-lg h-100 border-0" style="background: linear-gradient(120deg, #fff 60%, #2563eb10 100%);">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold text-primary">@e.Titel</h5>
+                                    <p class="card-text text-muted">
+                                        <i class="bi bi-calendar-event"></i> @e.Dato.ToString("dd.MM.yyyy") @e.Tidspunkt
+                                    </p>
+                                    <a class="btn btn-outline-primary btn-sm"
+                                       asp-page="/Events/Details" asp-route-id="@e.Id">
+                                        <i class="bi bi-info-circle"></i> Se mere
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="text-center mt-4">
+                    <a class="btn btn-primary btn-lg" asp-page="/Events/Index">Se alle begivenheder</a>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-secondary text-center">Ingen kommende begivenheder.</div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Donation - mere attraktiv og i tråd med design -->
+<section class="donation-section py-5 position-relative" style="background: linear-gradient(120deg, #fbbf24 0%, #2563eb 100%);">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-7 text-white">
+                <h2 class="fw-bold mb-3"><i class="bi bi-heart-fill text-danger me-2"></i>Støt foreningen</h2>
+                <p class="lead mb-4">Din donation gør en forskel! Hjælp os med at skabe flere aktiviteter, støtte unge og styrke fællesskabet.</p>
+                <a class="btn btn-light btn-lg shadow" asp-page="/Donations/Index"><i class="bi bi-cash-coin me-2"></i>Giv en donation</a>
             </div>
-            <div class="col-md-4 text-center">
-                <h3>Donationer</h3>
-                <p>Støt vores arbejde og gør en forskel.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <h3>Fællesskab</h3>
-                <p>Bliv en del af et engageret fællesskab.</p>
+            <div class="col-md-5 text-center">
+                <img src="~/images/donation-illustration.svg" alt="Donation" style="max-width: 250px;" />
             </div>
         </div>
     </div>
 </section>
 
+<!-- Features -->
+<section class="features py-5 bg-transparent position-relative">
+    <img src="~/images/Mosque-sunset.jpg" alt="Mosque at sunset" class="hero-img" />
+    <div class="container">
+        <div class="bg-dark bg-opacity-50 p-4 rounded text-white">
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="p-4 shadow-sm bg-transparent rounded h-100">
+                        <i class="bi bi-people display-4 text-success mb-3"></i>
+                        <h4>Fællesskab</h4>
+                        <p class="mb-0">Bliv en del af et engageret og stærkt muslimsk fællesskab.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 shadow-sm bg-transparent rounded h-100">
+                        <i class="bi bi-calendar-check display-4 text-success mb-3"></i>
+                        <h4>Arrangementer</h4>
+                        <p class="mb-0">Deltag i spændende aktiviteter, fredagsbønner og undervisning.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 shadow-sm bg-transparent rounded h-100">
+                        <i class="bi bi-heart-fill display-4 text-success mb-3"></i>
+                        <h4>Donationer</h4>
+                        <p class="mb-0">Støt vores arbejde og vær med til at gøre en forskel.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        // Gør alle hero-billeder lidt transparente ved scroll (ikke kun det første)
+        document.addEventListener('DOMContentLoaded', function () {
+            const heroImages = document.querySelectorAll('.hero-img');
+
+            function updateOpacity() {
+                const maxScroll = document.body.scrollHeight - window.innerHeight;
+                const ratio = maxScroll > 0 ? (window.scrollY / maxScroll) : 0;
+                const opacity = Math.max(1 - (ratio * 1), 0.7);
+                heroImages.forEach(img => img.style.opacity = opacity);
+            }
+
+            window.addEventListener('scroll', updateOpacity);
+            updateOpacity();
+        });
+    </script>
+}

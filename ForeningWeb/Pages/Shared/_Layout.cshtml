@@ -5,52 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ForeningWeb</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ForeningWeb.styles.css" asp-append-version="true" />
+    <style>
+        .navbar-custom {
+            background: linear-gradient(90deg, #1e293b 0%, #2563eb 100%);
+        }
+        .navbar-nav .nav-link {
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            border-radius: 0.5rem;
+            margin: 0 0.2rem;
+        }
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+            background: #fff;
+            color: #2563eb !important;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.1);
+        }
+        .navbar-brand {
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+            color: #fff !important;
+        }
+        .navbar-toggler {
+            border: none;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 0.5rem;
+        }
+        .nav-icon {
+            margin-right: 0.4em;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">ForeningWeb</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-custom sticky-top shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-page="/Index">
+                    <i class="bi bi-moon-stars-fill me-2"></i> ForeningWeb
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Forside</a>
+                            <a class="nav-link text-white" asp-area="" asp-page="/Index"><i class="bi bi-house-door nav-icon"></i>Forside</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Events/Index">Begivenheder</a>
+                            <a class="nav-link text-white" asp-area="" asp-page="/Events/Index"><i class="bi bi-calendar-event nav-icon"></i>Begivenheder</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/About/Index">Om</a>
+                            <a class="nav-link text-white" asp-area="" asp-page="/About/Index"><i class="bi bi-info-circle nav-icon"></i>Om</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Contacts/Index">Kontakt</a>
+                            <a class="nav-link text-white" asp-area="" asp-page="/Contacts/Index"><i class="bi bi-envelope nav-icon"></i>Kontakt</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Donations/Index">Donation</a>
-                            @if (User.Identity.IsAuthenticated)
-                            {
+                            <a class="nav-link text-white" asp-area="" asp-page="/Donations/Index"><i class="bi bi-heart nav-icon"></i>Donation</a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Events/Index">Admin</a>
+                                <a class="nav-link text-white" asp-area="" asp-page="/Admin/Events/Index"><i class="bi bi-shield-lock nav-icon"></i>Admin</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Logout">Log ud</a>
+                                <a class="nav-link text-white" asp-area="" asp-page="/Admin/Logout"><i class="bi bi-box-arrow-right nav-icon"></i>Log ud</a>
                             </li>
-                            }
-                            else
-                            {
+                            <li class="nav-item d-flex align-items-center ms-2">
+                                <img src="https://ui-avatars.com/api/?name=@User.Identity.Name&background=2563eb&color=fff&rounded=true&size=32" alt="Bruger" class="user-avatar" title="@User.Identity.Name" />
+                            </li>
+                        }
+                        else
+                        {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Login">Log ind</a>
+                                <a class="nav-link text-white" asp-area="" asp-page="/Admin/Login"><i class="bi bi-box-arrow-in-right nav-icon"></i>Log ind</a>
                             </li>
-                            }
-                        
-
-                        @* <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a></li> *@
+                        }
                     </ul>
                 </div>
             </div>
@@ -63,9 +104,10 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - ForeningWeb
+    <footer class="border-top footer text-muted mt-5">
+        <div class="container text-center py-3">
+            <span class="me-2">&copy; 2025 - ForeningWeb</span>
+            <a href="https://github.com/Somalim-10/ForeningWeb-" target="_blank" class="text-decoration-none text-primary"><i class="bi bi-github"></i> GitHub</a>
         </div>
     </footer>
 

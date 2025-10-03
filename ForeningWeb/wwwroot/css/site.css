@@ -1,44 +1,96 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color:blue;
+}
+
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link {
+        color: #fff;
+    }
+
+        .navbar-custom .navbar-brand:hover,
+        .navbar-custom .nav-link:hover {
+            color: #d4edda;
+        }
+
+/* Hero */
 .hero {
-  background: linear-gradient(135deg, #0062E6, #33AEFF);
-  padding: 6rem 0;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
+.hero-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Features */
 .features h3 {
-  font-weight: 600;
+    font-weight: 600;
+    color: #fff;
 }
 
 .features p {
-  color: #6c757d;
+    color: #ddd;
 }
 
+/* Intro */
 .intro {
-  background-color: #f8f9fa;
+    padding: 4rem 1rem;
+    text-align: center;
 }
 
+/* Upcoming events */
 .upcoming-events .list-group-item {
-  border: none;
-  border-bottom: 1px solid #dee2e6;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    background: transparent;
+    color: #fff;
 }
