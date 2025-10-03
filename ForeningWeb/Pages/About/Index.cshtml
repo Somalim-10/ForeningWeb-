@@ -1,36 +1,84 @@
 @page
 @model ForeningWeb.Pages.About.IndexModel
-
-<h1>Om</h1>
-@if (User.HasClaim("role", "admin"))
-{
-    <p><a asp-page="Create">Opret ny</a></p>
+@{
+    ViewData["Title"] = "Om";
 }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Indhold</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Items)
+<section class="about-section py-5 position-relative" style="background: linear-gradient(120deg, #2563eb 0%, #1e293b 100%); min-height: 400px;">
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center align-items-center text-white" style="min-height: 400px;">
+            <h1 class="display-4 fw-bold mb-4"><i class="bi bi-info-circle me-2"></i>Om foreningen</h1>
+            <p class="lead mb-3" style="max-width: 700px;">
+                ForeningWeb er et samlingspunkt for det somalisk-danske fællesskab. Vi tilbyder aktiviteter, undervisning, sociale arrangementer og støtte til både unge og voksne. Vores vision er at styrke fællesskab, identitet og sammenhold gennem respekt, åbenhed, engagement og tro. Alle er velkomne – uanset baggrund.
+            </p>
+            <ul class="list-unstyled mb-0" style="font-size:1.2rem;">
+                <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Vision: Styrke fællesskab og identitet</li>
+                <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Værdier: Respekt, åbenhed, engagement og tro</li>
+                <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Alle er velkomne</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+@if (!(Model.Items?.Any() ?? false))
 {
-        <tr>
-            <td>@item.Indhold</td>
-            <td>
-                @if (User.HasClaim("role", "admin"))
-                {
-                    <a asp-page="Edit" asp-route-id="@item.Id">Rediger</a> 
-                }
-                <a asp-page="Details" asp-route-id="@item.Id">Detaljer</a>
-                @if (User.HasClaim("role", "admin"))
-                {
-                     <a asp-page="Delete" asp-route-id="@item.Id">Slet</a>
-                }
-            </td>
-        </tr>
+    <div class="text-center p-5 bg-light rounded-3 border shadow-sm mt-4">
+        <div class="display-6 mb-2">Ingen opslag endnu</div>
+        <p class="text-muted mb-4">Når du opretter et "Om"-opslag, vises det her.</p>
+        @if (User.HasClaim("role", "admin"))
+        {
+            <a class="btn btn-primary" asp-page="Create"><i class="bi bi-plus-lg"></i> Opret det første</a>
+        }
+    </div>
 }
-    </tbody>
-</table>
+else
+{
+    <div class="container mt-4">
+        <div class="row g-4">
+            @foreach (var item in Model.Items)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-lg border-0" style="background: linear-gradient(120deg, #fff 60%, #2563eb10 100%);">
+                        @if (!string.IsNullOrWhiteSpace(item.BilledePath))
+                        {
+                            <img src="@item.BilledePath"
+                                 alt="Billede til @((item.Indhold ?? "Om").Substring(0, Math.Min(30, (item.Indhold ?? "").Length)))"
+                                 class="card-img-top" style="height:200px; object-fit:cover;">
+                        }
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Om opslag</h5>
+                            @* kort uddrag *@
+                            @{
+                                var text = item.Indhold ?? "";
+                                var shortText = text.Length > 160 ? text.Substring(0, 160) + "…" : text;
+                            }
+                            <p class="card-text text-muted flex-grow-1">@shortText</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <a class="btn btn-outline-primary btn-sm"
+                                   asp-page="Details" asp-route-id="@item.Id">
+                                    Læs mere
+                                </a>
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Admin actions">
+                                    @if (User.HasClaim("role", "admin"))
+                                    {
+                                        <a class="btn btn-outline-secondary"
+                                           asp-page="Edit" asp-route-id="@item.Id">
+                                            Rediger
+                                        </a>
+                                    }
+                                    @if (User.HasClaim("role", "admin"))
+                                    {
+                                        <a class="btn btn-outline-danger"
+                                           asp-page="Delete" asp-route-id="@item.Id">
+                                            Slet
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

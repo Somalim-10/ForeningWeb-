@@ -1,14 +1,14 @@
-﻿using System;
-using System.Threading.Tasks;
 using ForeningWeb.Data;
 using ForeningWeb.Models;
 using ForeningWeb.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Threading.Tasks;
 
-using Xunit;
-
-namespace ForeningWeb.Tests
+namespace ForeningWeb.Tests.Services
 {
+    [TestClass]
     public class EventServiceTests
     {
         private static EventService CreateService(out ApplicationDbContext context)
@@ -17,10 +17,11 @@ namespace ForeningWeb.Tests
                 .UseInMemoryDatabase(Guid.NewGuid().ToString())
                 .Options;
             context = new ApplicationDbContext(options);
-            return new EventService(context);
+            // Use null for IHttpClientFactory and ILogger<EventService> for basic tests
+            return new EventService(context, new DummyHttpClientFactory(), new DummyLogger<EventService>());
         }
 
-        [Fact]
+        [TestMethod]
         public async Task CreateAsync_Adds_Event()
         {
             var service = CreateService(out var db);
@@ -28,12 +29,12 @@ namespace ForeningWeb.Tests
 
             var id = await service.CreateAsync(evt);
 
-            Assert.True(id > 0);
+            Assert.IsTrue(id > 0);
             var fromDb = await db.Events.FindAsync(id);
-            Assert.NotNull(fromDb);
+            Assert.IsNotNull(fromDb);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task GetAllAsync_Returns_Events_In_Descending_Order()
         {
             var service = CreateService(out var db);
@@ -42,12 +43,12 @@ namespace ForeningWeb.Tests
 
             var events = await service.GetAllAsync();
 
-            Assert.Equal(2, events.Count);
-            Assert.Equal("second", events[0].Titel);
-            Assert.Equal("first", events[1].Titel);
+            Assert.AreEqual(2, events.Count);
+            Assert.AreEqual("second", events[0].Titel);
+            Assert.AreEqual("first", events[1].Titel);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task FindAsync_Returns_Event_By_Id()
         {
             var service = CreateService(out var db);
@@ -56,11 +57,11 @@ namespace ForeningWeb.Tests
 
             var found = await service.FindAsync(id);
 
-            Assert.NotNull(found);
-            Assert.Equal("target", found!.Titel);
+            Assert.IsNotNull(found);
+            Assert.AreEqual("target", found!.Titel);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task UpdateAsync_Updates_Event()
         {
             var service = CreateService(out var db);
@@ -71,10 +72,10 @@ namespace ForeningWeb.Tests
             await service.UpdateAsync(evt);
 
             var updated = await service.FindAsync(evt.Id);
-            Assert.Equal("new", updated!.Titel);
+            Assert.AreEqual("new", updated!.Titel);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task DeleteAsync_Removes_Event()
         {
             var service = CreateService(out var db);
@@ -84,7 +85,19 @@ namespace ForeningWeb.Tests
             await service.DeleteAsync(evt.Id);
 
             var deleted = await service.FindAsync(evt.Id);
-            Assert.Null(deleted);
+            Assert.IsNull(deleted);
         }
+    }
+
+    // Dummy implementations for dependencies
+    public class DummyHttpClientFactory : IHttpClientFactory
+    {
+        public System.Net.Http.HttpClient CreateClient(string name = null) => new System.Net.Http.HttpClient();
+    }
+    public class DummyLogger<T> : Microsoft.Extensions.Logging.ILogger<T>
+    {
+        public IDisposable BeginScope<TState>(TState state) => null;
+        public bool IsEnabled(Microsoft.Extensions.Logging.LogLevel logLevel) => false;
+        public void Log<TState>(Microsoft.Extensions.Logging.LogLevel logLevel, Microsoft.Extensions.Logging.EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter) { }
     }
 }

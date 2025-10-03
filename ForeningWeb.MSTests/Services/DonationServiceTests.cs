@@ -1,25 +1,25 @@
-﻿using ForeningWeb.Data;
+using ForeningWeb.Data;
 using ForeningWeb.Models;
 using ForeningWeb.Services;
 using Microsoft.EntityFrameworkCore;
-using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using Xunit;
 
-namespace ForeningWeb.Tests
+namespace ForeningWeb.MSTests.Services
 {
+    [TestClass]
     public class DonationServiceTests
     {
         private static DonationService CreateService(out ApplicationDbContext context)
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                .UseInMemoryDatabase(System.Guid.NewGuid().ToString())
                 .Options;
             context = new ApplicationDbContext(options);
             return new DonationService(context);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task CreateAsync_AddsDonation()
         {
             var service = CreateService(out var db);
@@ -28,11 +28,11 @@ namespace ForeningWeb.Tests
             var id = await service.CreateAsync(donation);
 
             var stored = await db.Donationer.FindAsync(id);
-            Assert.NotNull(stored);
-            Assert.Equal("123", stored!.MobilePayNummer);
+            Assert.IsNotNull(stored);
+            Assert.AreEqual("123", stored!.MobilePayNummer);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task GetAllAsync_ReturnsAllDonations()
         {
             var service = CreateService(out var db);
@@ -42,10 +42,10 @@ namespace ForeningWeb.Tests
 
             var all = await service.GetAllAsync();
 
-            Assert.Equal(2, all.Count);
+            Assert.AreEqual(2, all.Count);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task FindAsync_ReturnsDonationById()
         {
             var service = CreateService(out var db);
@@ -55,11 +55,11 @@ namespace ForeningWeb.Tests
 
             var found = await service.FindAsync(donation.Id);
 
-            Assert.NotNull(found);
-            Assert.Equal("321", found!.MobilePayNummer);
+            Assert.IsNotNull(found);
+            Assert.AreEqual("321", found!.MobilePayNummer);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task UpdateAsync_UpdatesDonation()
         {
             var service = CreateService(out var db);
@@ -71,10 +71,10 @@ namespace ForeningWeb.Tests
             await service.UpdateAsync(donation);
 
             var updated = await db.Donationer.FindAsync(donation.Id);
-            Assert.Equal("222", updated!.MobilePayNummer);
+            Assert.AreEqual("222", updated!.MobilePayNummer);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task DeleteAsync_RemovesDonation()
         {
             var service = CreateService(out var db);
@@ -85,7 +85,7 @@ namespace ForeningWeb.Tests
             await service.DeleteAsync(donation.Id);
 
             var deleted = await db.Donationer.FindAsync(donation.Id);
-            Assert.Null(deleted);
+            Assert.IsNull(deleted);
         }
     }
 }

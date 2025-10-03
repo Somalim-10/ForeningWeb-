@@ -8,10 +8,6 @@ html {
     }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
 html {
     position: relative;
     min-height: 100%;
@@ -21,8 +17,17 @@ body {
     margin-bottom: 60px;
 }
 
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Navbar */
 .navbar-custom {
-    background-color: #1d713f;
+    background-color:blue;
 }
 
     .navbar-custom .navbar-brand,
@@ -35,7 +40,7 @@ body {
             color: #d4edda;
         }
 
-/* Tilføjelse af fade-effekt til hero-sektionen */
+/* Hero */
 .hero {
     position: relative;
     height: 100vh;
@@ -51,7 +56,7 @@ body {
     object-fit: cover;
     z-index: -1;
     transition: opacity 0.5s ease;
-    opacity: 1; /* Start med fuld synlighed */
+    opacity: 1;
 }
 
 .hero-overlay {
@@ -66,50 +71,26 @@ body {
     align-items: center;
 }
 
+/* Features */
 .features h3 {
-    position: relative;
-    z-index: 1;
-    height: 100vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    font-weight: 600;
+    color: #fff;
 }
 
 .features p {
-    position: relative;
-    z-index: 1;
-    height: 100vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    color: #ddd;
 }
 
+/* Intro */
 .intro {
-    position: relative;
-    z-index: 1;
-    height: 100vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 4rem 1rem;
+    text-align: center;
 }
 
+/* Upcoming events */
 .upcoming-events .list-group-item {
-    position: relative;
-    z-index: 1;
-    height: 100vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    background: transparent;
+    color: #fff;
 }

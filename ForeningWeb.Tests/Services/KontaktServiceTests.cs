@@ -1,22 +1,24 @@
-﻿using ForeningWeb.Data;
+using ForeningWeb.Data;
 using ForeningWeb.Models;
 using ForeningWeb.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading.Tasks;
 
-
-namespace ForeningWeb.Tests
+namespace ForeningWeb.Tests.Services
 {
+    [TestClass]
     public class KontaktServiceTests
     {
         private static ApplicationDbContext CreateContext()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                .UseInMemoryDatabase(System.Guid.NewGuid().ToString())
                 .Options;
             return new ApplicationDbContext(options);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task CreateAsync_AddsKontakt()
         {
             using var context = CreateContext();
@@ -25,12 +27,12 @@ namespace ForeningWeb.Tests
             var kontakt = new Kontakt { Navn = "Test" };
             var id = await service.CreateAsync(kontakt);
 
-            Assert.NotEqual(0, id);
+            Assert.AreNotEqual(0, id);
             var stored = await context.Kontakter.FindAsync(id);
-            Assert.Equal("Test", stored?.Navn);
+            Assert.AreEqual("Test", stored?.Navn);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task GetAllAsync_ReturnsAll()
         {
             using var context = CreateContext();
@@ -40,10 +42,10 @@ namespace ForeningWeb.Tests
             await service.CreateAsync(new Kontakt { Navn = "B" });
 
             var all = await service.GetAllAsync();
-            Assert.Equal(2, all.Count);
+            Assert.AreEqual(2, all.Count);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task FindAsync_ReturnsKontakt()
         {
             using var context = CreateContext();
@@ -52,11 +54,11 @@ namespace ForeningWeb.Tests
             var id = await service.CreateAsync(new Kontakt { Navn = "Find" });
 
             var found = await service.FindAsync(id);
-            Assert.NotNull(found);
-            Assert.Equal("Find", found?.Navn);
+            Assert.IsNotNull(found);
+            Assert.AreEqual("Find", found?.Navn);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task UpdateAsync_UpdatesKontakt()
         {
             using var context = CreateContext();
@@ -68,10 +70,10 @@ namespace ForeningWeb.Tests
             await service.UpdateAsync(kontakt);
 
             var updated = await service.FindAsync(id);
-            Assert.Equal("New", updated?.Navn);
+            Assert.AreEqual("New", updated?.Navn);
         }
 
-        [Fact]
+        [TestMethod]
         public async Task DeleteAsync_RemovesKontakt()
         {
             using var context = CreateContext();
@@ -81,9 +83,9 @@ namespace ForeningWeb.Tests
             await service.DeleteAsync(id);
 
             var found = await service.FindAsync(id);
-            Assert.Null(found);
+            Assert.IsNull(found);
             var all = await service.GetAllAsync();
-            Assert.Empty(all);
+            Assert.AreEqual(0, all.Count);
         }
     }
 }

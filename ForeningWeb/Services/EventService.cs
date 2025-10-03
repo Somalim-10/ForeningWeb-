@@ -33,10 +33,19 @@ namespace ForeningWeb.Services
 
         public async Task UpdateAsync(Event e)
         {
-            _db.Events.Update(e);
+            var existing = await _db.Events.FindAsync(e.Id);
+            if (existing == null) return;
+
+            existing.Titel = e.Titel;
+            existing.Dato = e.Dato;
+            existing.Tidspunkt = e.Tidspunkt;
+            existing.Beskrivelse = e.Beskrivelse;
+            existing.ImageUrl = e.ImageUrl;
+
             await _db.SaveChangesAsync();
             _logger.LogInformation("Event opdateret: Id {EventId}", e.Id);
         }
+
 
         public Task<List<Event>> GetAllAsync() =>
             _db.Events.OrderByDescending(e => e.Dato).ToListAsync();

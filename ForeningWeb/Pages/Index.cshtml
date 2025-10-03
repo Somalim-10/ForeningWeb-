@@ -5,25 +5,29 @@
 }
 
 <!-- Hero sektion -->
-<section class="hero position-relative text-center text-white">
+<section class="hero position-relative text-center text-white mb-0">
     <img src="~/images/Mosque-sunset.jpg" alt="Mosque at sunset" class="hero-img" />
     <div class="hero-overlay d-flex flex-column justify-content-center align-items-center">
-        <h1 class="display-4 fw-bold">Velkommen til ForeningWeb</h1>
-        <p class="lead mb-4">En moderne platform for det somalisk-danske fællesskab.</p>
-        <a class="btn btn-primary btn-lg" asp-page="/Events/Index">Se vores begivenheder</a>
+        <h1 class="display-3 fw-bold mb-3">Velkommen til ForeningWeb</h1>
+        <p class="lead mb-4">Samlingspunkt for det somalisk-danske fællesskab – aktiviteter, venskab og tro.</p>
+        <a class="btn btn-primary btn-lg shadow" asp-page="/Events/Index"><i class="bi bi-calendar-event me-2"></i>Se vores begivenheder</a>
+        <a class="btn btn-outline-light btn-lg mt-2" asp-page="/Contacts/Index"><i class="bi bi-person-plus me-2"></i>Bliv medlem</a>
     </div>
 </section>
 
-<!-- Intro -->
-<section class="intro py-5 bg-transparent text-center position-relative">
-    <img src="~/images/Mosque-sunset.jpg" alt="Mosque at sunset" class="hero-img" />
-    <div class="container">
-        <div class="bg-dark bg-opacity-50 p-4 rounded text-white">
-            <h2 class="fw-bold mb-3">Om foreningen</h2>
-            <p class="lead mb-0">
-                Vi samler aktiviteter, undervisning, donationer og et stærkt fællesskab i trygge rammer.
-                Vores mål er at styrke det somaliske og muslimske fællesskab i Danmark – sammen.
+<!-- Om foreningen - fylder hele siden -->
+<section class="about-section py-5 position-relative" style="background: linear-gradient(120deg, #2563eb 0%, #1e293b 100%); min-height: 400px;">
+    <div class="container-fluid px-0">
+        <div class="d-flex flex-column justify-content-center align-items-center text-white" style="min-height: 400px;">
+            <h2 class="display-5 fw-bold mb-4">Om foreningen</h2>
+            <p class="lead mb-3" style="max-width: 700px;">
+                ForeningWeb er et samlingspunkt for det somalisk-danske fællesskab. Vi tilbyder aktiviteter, undervisning, sociale arrangementer og støtte til både unge og voksne. Vores vision er at styrke fællesskab, identitet og sammenhold gennem respekt, åbenhed, engagement og tro. Alle er velkomne – uanset baggrund.
             </p>
+            <ul class="list-unstyled mb-0" style="font-size:1.2rem;">
+                <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Vision: Styrke fællesskab og identitet</li>
+                <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Værdier: Respekt, åbenhed, engagement og tro</li>
+                <li><i class="bi bi-check-circle-fill text-warning me-2"></i> Alle er velkomne</li>
+            </ul>
         </div>
     </div>
 </section>
@@ -34,20 +38,19 @@
     <div class="container">
         <div class="bg-dark bg-opacity-50 p-4 rounded text-white">
             <h2 class="text-center fw-bold mb-5">Kommende begivenheder</h2>
-
             @if ((Model.UpcomingEvents?.Any()).GetValueOrDefault())
             {
                 <div class="row g-4">
                     @foreach (var e in Model.UpcomingEvents)
                     {
                         <div class="col-md-4">
-                            <div class="card shadow-sm h-100">
+                            <div class="card shadow-lg h-100 border-0" style="background: linear-gradient(120deg, #fff 60%, #2563eb10 100%);">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title fw-bold">@e.Titel</h5>
+                                    <h5 class="card-title fw-bold text-primary">@e.Titel</h5>
                                     <p class="card-text text-muted">
-                                        @e.Dato.ToString("dd.MM.yyyy") @e.Tidspunkt
+                                        <i class="bi bi-calendar-event"></i> @e.Dato.ToString("dd.MM.yyyy") @e.Tidspunkt
                                     </p>
-                                    <a class="btn btn-outline-success btn-sm"
+                                    <a class="btn btn-outline-primary btn-sm"
                                        asp-page="/Events/Details" asp-route-id="@e.Id">
                                         <i class="bi bi-info-circle"></i> Se mere
                                     </a>
@@ -56,15 +59,30 @@
                         </div>
                     }
                 </div>
-
                 <div class="text-center mt-4">
-                    <a class="btn btn-success btn-lg" asp-page="/Events/Index">Se alle begivenheder</a>
+                    <a class="btn btn-primary btn-lg" asp-page="/Events/Index">Se alle begivenheder</a>
                 </div>
             }
             else
             {
                 <div class="alert alert-secondary text-center">Ingen kommende begivenheder.</div>
             }
+        </div>
+    </div>
+</section>
+
+<!-- Donation - mere attraktiv og i tråd med design -->
+<section class="donation-section py-5 position-relative" style="background: linear-gradient(120deg, #fbbf24 0%, #2563eb 100%);">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-7 text-white">
+                <h2 class="fw-bold mb-3"><i class="bi bi-heart-fill text-danger me-2"></i>Støt foreningen</h2>
+                <p class="lead mb-4">Din donation gør en forskel! Hjælp os med at skabe flere aktiviteter, støtte unge og styrke fællesskabet.</p>
+                <a class="btn btn-light btn-lg shadow" asp-page="/Donations/Index"><i class="bi bi-cash-coin me-2"></i>Giv en donation</a>
+            </div>
+            <div class="col-md-5 text-center">
+                <img src="~/images/donation-illustration.svg" alt="Donation" style="max-width: 250px;" />
+            </div>
         </div>
     </div>
 </section>
