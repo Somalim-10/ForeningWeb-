@@ -8,7 +8,7 @@
 <section class="hero position-relative text-center text-white mb-0">
     <img src="~/images/Mosque-sunset.jpg" alt="Mosque at sunset" class="hero-img" />
     <div class="hero-overlay d-flex flex-column justify-content-center align-items-center">
-        <h1 class="display-3 fw-bold mb-3">Velkommen til ForeningWeb</h1>
+        <h1 class="display-3 fw-bold mb-3 text-typing"></h1>
         <p class="lead mb-4">Samlingspunkt for det somalisk-danske fællesskab – aktiviteter, venskab og tro.</p>
         <a class="btn btn-primary btn-lg shadow" asp-page="/Events/Index"><i class="bi bi-calendar-event me-2"></i>Se vores begivenheder</a>
         <a class="btn btn-outline-light btn-lg mt-2" asp-page="/Contacts/Index"><i class="bi bi-person-plus me-2"></i>Bliv medlem</a>
@@ -136,4 +136,47 @@
             updateOpacity();
         });
     </script>
+
+    <script>
+        // Tekst-animation (typing effect) i hero-sektionen
+        document.addEventListener("DOMContentLoaded", function () {
+            const element = document.querySelector(".text-typing");
+            const words = [
+                "Velkommen til ForeningWeb",
+                "Samlingspunkt for fællesskab",
+                "Aktiviteter, tro og sammenhold"
+            ];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typingSpeed = 100;   // hastighed ved skrivning
+            const deletingSpeed = 60;  // hastighed ved sletning
+            const delayBetweenWords = 1000; // pause mellem ord
+
+            function typeEffect() {
+                const currentWord = words[wordIndex];
+
+                if (isDeleting) {
+                    element.textContent = currentWord.substring(0, charIndex--);
+                } else {
+                    element.textContent = currentWord.substring(0, charIndex++);
+                }
+
+                if (!isDeleting && charIndex === currentWord.length) {
+                    isDeleting = true;
+                    setTimeout(typeEffect, delayBetweenWords);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(typeEffect, 300);
+                } else {
+                    setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+                }
+            }
+
+            typeEffect();
+        });
+    </script>
+
+
 }
